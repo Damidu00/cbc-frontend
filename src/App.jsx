@@ -5,17 +5,18 @@ import HomePage from './pages/homePage'
 import LoginPage from './pages/loginPage'
 import AdminHomePage from './pages/adminHomePage'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className=''>
-      <BrowserRouter>
+      <BrowserRouter>   
         <Routes path="/*">
           <Route path='/' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/admin/*' element={<AdminHomePage/>}/>
-         
+          <Route path='/admin/*' element={<AdminHomePage/>}/>  
+           
         </Routes>
       </BrowserRouter>
     </div>

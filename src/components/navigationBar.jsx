@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle, FaShoppingBag } from "react-icons/fa";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import logo from '../assets/logo.jpg'
 
 export default function NavigationBar() {
   useEffect(() => {
@@ -11,25 +12,25 @@ export default function NavigationBar() {
 
   return (
     <nav className="sticky top-0 bg-white shadow-md p-4 flex items-center justify-between z-50" data-aos="fade-down">
-      {/* Left Side: Logo */}
+
       <div className="flex items-center">
-        <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+        <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center">
           <img
-            src="/path-to-your-logo.png"
+            src={logo}
             alt="Logo"
-            className="w-8 h-8 rounded-full"
+            className="w-10 h-10 rounded-full"
           />
         </div>
       </div>
 
-      {/* Middle: Title */}
+
       <div className="text-center flex-grow">
         <h1 className="text-xl font-bold text-gray-700">Cristal Beauty Clear</h1>
       </div>
 
-      {/* Right Side: Links and Icons */}
+
       <div className="flex items-center space-x-6">
-        {/* Navigation Links */}
+
         <Link
           to="/products"
           className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -49,7 +50,7 @@ export default function NavigationBar() {
           About Us
         </Link>
 
-        {/* Account */}
+
         <div className="flex items-center space-x-2">
           <FaUserCircle className="w-6 h-6 text-gray-600" />
           <Link
@@ -60,7 +61,7 @@ export default function NavigationBar() {
           </Link>
         </div>
 
-        {/* Bag */}
+
         <div className="flex items-center space-x-2">
           <FaShoppingBag className="w-6 h-6 text-gray-600" />
           <Link

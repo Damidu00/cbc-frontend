@@ -9,16 +9,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className=''>
       <BrowserRouter>
-        <Routes>
+        <Routes path="/*">
           <Route path='/' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/*' element={<h1>404 error not found</h1>} />
-          <Route path='/admin' element={<AdminHomePage/>}/>
+          <Route path='/admin/*' element={<AdminHomePage/>}/>
+         
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

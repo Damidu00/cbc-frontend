@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import HomePage from './pages/homePage'
 import LoginPage from './pages/loginPage'
 import AdminHomePage from './pages/adminHomePage'
+import { Toaster } from 'react-hot-toast'
 
 
 function App() {
@@ -11,12 +12,13 @@ function App() {
 
   return (
     <div className=''>
-      <BrowserRouter>   
+      <BrowserRouter>
+      <Toaster position="top-right"
+  reverseOrder={false}/>
         <Routes path="/*">
           <Route path='/' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/admin/*' element={<AdminHomePage/>}/>  
-           
         </Routes>
       </BrowserRouter>
     </div>

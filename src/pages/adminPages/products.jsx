@@ -1,58 +1,66 @@
-import axios from 'axios'
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { FaTrash } from 'react-icons/fa';
+import { FaPencil } from 'react-icons/fa6';
 
 export default function Products() {
+  const [products, setProducts] = useState([]);
 
-  const [products,setProducts] = useState([
-  {
-    "_id": "676844b2574e0a0d18ad049f",
-    "productId": "CBC200",
-    "productName": "1 Glow Face Serum",
-    "altNames": [
-      "Glowing Skin Serum",
-      "Brightening Serum"
-    ],
-    "images": [
-      "https://example.com/images/serum-front.jpg",
-      "https://example.com/images/serum-back.jpg"
-    ],
-    "price": 49.99,
-    "lastPrice": 59.99,
-    "description": "A lightweight face serum enriched with Vitamin C and hyaluronic acid to give you radiant, glowing skin. Perfect for all skin types.",
-    "stock": 150,
-    "__v": 0
-  },
-  {
-    "_id": "676849758724d0e9650e5794",
-    "productId": "CBC20001",
-    "productName": "japan Glow Face Serum",
-    "altNames": [
-      "Glowing Skin Serum",
-      "Brightening Serum"
-    ],
-    "images": [
-      "https://example.com/images/serum-front.jpg",
-      "https://example.com/images/serum-back.jpg"
-    ],
-    "price": 49.99,
-    "lastPrice": 59.99,
-    "description": "A lightweight face serum enriched with Vitamin C and hyaluronic acid to give you radiant, glowing skin. Perfect for all skin types.",
-    "stock": 150,
-    "__v": 0
-  }
-  
-])
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/products').then((res) => {
+      console.log(res.data);
+      setProducts(res.data);
+    });
+  }, []);
 
-  axios.get("http://localhost:5000/api/products")
+  const truncateDescription = (description, maxLength) => {
+    return description.length > maxLength
+      ? description.slice(0, maxLength) + '...'
+      : description;
+  };
 
   return (
-    <div><h1>products</h1>
-
-    {products.map((product)=>{
-      console.log(product)
-    })}
-
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
+      <table className="w-full table-auto border border-gray-300 bg-white shadow-lg">
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="p-4 border border-gray-300 text-left">Product Id</th>
+            <th className="p-4 border border-gray-300 text-left">Product Name</th>
+            <th className="p-4 border border-gray-300 text-left">Price</th>
+            <th className="p-4 border border-gray-300 text-left">Last Price</th>
+            <th className="p-4 border border-gray-300 text-left">Stock</th>
+            <th className="p-4 border border-gray-300 text-left">Description</th>
+            <th className="p-4 border border-gray-300 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={index} className="odd:bg-gray-50 even:bg-gray-100">
+              <td className="p-4 border border-gray-300">{product.productId}</td>
+              <td className="p-4 border border-gray-300">{product.productName}</td>
+              <td className="p-4 border border-gray-300">${product.price.toFixed(2)}</td>
+              <td className="p-4 border border-gray-300">${product.lastPrice.toFixed(2)}</td>
+              <td className="p-4 border border-gray-300">{product.stock}</td>
+              <td className="p-4 border border-gray-300">
+                {truncateDescription(product.description, 50)}
+              </td>
+              <td className="p-4 border border-gray-300 text-center flex justify-center space-x-4">
+                <button
+                  className="p-2 bg-yellow-400 text-white hover:bg-yellow-500 focus:outline-none rounded-full"
+                >
+                  <FaPencil size={20} />
+                </button>
+                <button
+                  className="p-2 bg-red-500 text-white hover:bg-red-600 focus:outline-none rounded-full"
+                >
+                  <FaTrash size={20} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-    
-  )
+  );
 }

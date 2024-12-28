@@ -43,6 +43,8 @@ export default function Products() {
   
 ])
 
+  axios.get("http://localhost:5000/api/products")
+
   return (
     <div><h1>products</h1>
 
@@ -53,9 +55,4 @@ export default function Products() {
     </div>
     
   )
-}
-
-async function getProducts(){
-  const res = await axios.get("http://localhost:5000/api/products")
-  console.log(res)
 }

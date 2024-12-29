@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FaTrash } from 'react-icons/fa';
+import { FaPlus, FaTrash } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -20,7 +21,8 @@ export default function Products() {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 min-h-screen relative" >
+      <Link to={"/admin/products/addProduct"} className='absolute right-[25px] bottom-[25px] text-[30px] bg-[#245af7] p-4 text-white rounded-xl hover:bg-[#2eb2dd] hover:text-black'><FaPlus/></Link>
       <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
       <table className="w-full table-auto border border-gray-300 bg-white shadow-lg">
         <thead className="bg-gray-200">

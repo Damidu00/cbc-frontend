@@ -16,10 +16,11 @@ export default function AdminHomePage() {
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/customers"><IoPeopleSharp className='mr-2' />Customers</Link>
         </div>
 
-        <div className="w-[78%] bg-blue-200 h-screen">
+        <div className="w-[80%] bg-blue-200 h-screen">
             <Routes path="/*">
                 <Route path="/dashboard" element={<h3>DashBoard</h3>}/>
                 <Route path='/products' element={<Products/>}/>
+                <Route path='/products/addProduct' element={<h1>Add Product Page</h1>}/>
             </Routes>
         </div>
     </div>

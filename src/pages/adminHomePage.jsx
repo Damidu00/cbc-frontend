@@ -5,6 +5,7 @@ import { AiOutlineProduct } from "react-icons/ai"
 import { FaShoppingCart } from "react-icons/fa"
 import { IoPeopleSharp } from "react-icons/io5";
 import Products from './adminPages/products'
+import AddProductForm from './adminPages/addProductPage'
 
 export default function AdminHomePage() {
   return (
@@ -20,7 +21,7 @@ export default function AdminHomePage() {
             <Routes path="/*">
                 <Route path="/dashboard" element={<h3>DashBoard</h3>}/>
                 <Route path='/products' element={<Products/>}/>
-                <Route path='/products/addProduct' element={<h1>Add Product Page</h1>}/>
+                <Route path='/products/addProduct' element={<AddProductForm/>}/>
             </Routes>
         </div>
     </div>

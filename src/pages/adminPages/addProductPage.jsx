@@ -101,7 +101,7 @@ export default function AddProductForm() {
                     </div>
 
 
-                    <button type="submit" className="w-full bg-gray-700 text-white p-3 rounded-md font-bold hover:bg-gray-800 transition">Add Product</button>
+                    <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-800 transition">Add Product</button>
                 </form>
             </div>
         </div>

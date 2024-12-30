@@ -24,48 +24,80 @@ export default function AddProductForm() {
                     <div className="flex space-x-4">
                         <div className="flex flex-col w-1/2">
                             <label className="text-gray-600 font-medium">Product ID</label>
-                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                onChange={(e)=>{
+                                    setProductId(e.target.value)
+                                }}
+                            />
                         </div>
                         <div className="flex flex-col w-1/2">
                             <label className="text-gray-600 font-medium">Product Name</label>
-                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                                onChange={(e)=>{
+                                    setProductName(e.target.value)
+                                }}
+                            />
                         </div>
                     </div>
 
 
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Alternative Names</label>
-                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                            onChange={(e)=>{
+                                setAlterNames(e.target.value)
+                            }}
+                        />
                     </div>
 
        
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Image URLs</label>
-                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                            onChange={(e)=>{
+                                setImageUrls(e.target.value)
+                            }}
+                        />
                     </div>
 
   
                     <div className="flex space-x-4">
                         <div className="flex flex-col w-1/2">
                             <label className="text-gray-600 font-medium">Price</label>
-                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                                onChange={(e)=>{
+                                    setPrice(e.target.value)
+                                }}
+                            />
                         </div>
                         <div className="flex flex-col w-1/2">
                             <label className="text-gray-600 font-medium">Last Price</label>
-                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                            <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                                onChange={(e)=>{
+                                    setLastPrice(e.target.value)
+                                }}
+                            />
                         </div>
                     </div>
 
 
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Stock</label>
-                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                            onChange={(e)=>{
+                                setStock(e.target.value)
+                            }}
+                        />
                     </div>
 
    
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Description</label>
-                        <textarea className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 resize-none" rows="4"></textarea>
+                        <textarea className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 resize-none" rows="4"
+                            onChange={(e)=>{
+                                setDescription(e.target.value)
+                            }}
+                        ></textarea>
                     </div>
 
 

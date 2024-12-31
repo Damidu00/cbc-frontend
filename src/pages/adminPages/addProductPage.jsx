@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function AddProductForm() {
 
@@ -11,7 +13,7 @@ export default function AddProductForm() {
     const [stock,setStock]= useState("")
     const [description,setDescription] = useState("")
 
-    function handleSubmit(){
+    async function handleSubmit(){
         const altNames = alternativeNames.split(",")
         const imgUrls = imageUrls.split(",")
 
@@ -25,6 +27,21 @@ export default function AddProductForm() {
             stock : stock,
             description : description
         }
+
+        const token = localStorage.getItem("token")
+
+        try {
+            await axios.post("http://localhost:5000/api/products",product,{
+                headers : {
+                    Authorization : "Bearer" + token
+                }
+            })
+            toast.success("product added successfully")
+        } catch (error) {
+            console.log(error)
+        }
+
+        
     }
 
 

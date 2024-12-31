@@ -99,9 +99,7 @@ export default function AddProductForm() {
                             }}
                         ></textarea>
                     </div>
-
-
-                    <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-800 transition">Add Product</button>
+                    <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-900 transition">Add Product</button>
                 </form>
             </div>
         </div>

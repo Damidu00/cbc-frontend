@@ -4,12 +4,28 @@ export default function AddProductForm() {
 
     const [productId,setProductId] = useState("");
     const [productName,setProductName]= useState("")
-    const [alterNames,setAlterNames] = useState("")
+    const [alternativeNames,setAlterNames] = useState("")
     const [imageUrls,setImageUrls] = useState("")
     const [price,setPrice] = useState("")
     const [lastPrice,setLastPrice] = useState("")
     const [stock,setStock]= useState("")
-    const [Description,setDescription] = useState("")
+    const [description,setDescription] = useState("")
+
+    function handleSubmit(){
+        const altNames = alternativeNames.split(",")
+        const imgUrls = imageUrls.split(",")
+
+        const product = {
+            productId :productId,
+            productName : productName,
+            altNames :  altNames,
+            images : imgUrls,
+            price : price,
+            lastPrice : lastPrice,
+            stock : stock,
+            description : description
+        }
+    }
 
 
 
@@ -18,7 +34,7 @@ export default function AddProductForm() {
         <div className="w-full h-screen bg-gray-200 flex items-center justify-center">
             <div className="bg-white p-8 rounded-lg shadow-lg w-[80%] max-w-3xl">
                 <h1 className="text-3xl font-bold text-center mb-6 text-gray-700">Add Your Product Here</h1>
-                <form className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-4">
 
 
                     <div className="flex space-x-4">
@@ -99,8 +115,12 @@ export default function AddProductForm() {
                             }}
                         ></textarea>
                     </div>
-                    <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-900 transition">Add Product</button>
-                </form>
+
+
+                    <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-900 transition"
+                        onClick={handleSubmit}
+                    >Add Product</button>
+                </div>
             </div>
         </div>
     );

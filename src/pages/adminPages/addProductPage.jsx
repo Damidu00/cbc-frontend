@@ -38,6 +38,7 @@ export default function AddProductForm() {
                     Authorization : "Bearer "+token
                 }
             })
+            navigate("/admin/products")
             toast.success("response.data.message");
         } catch (err) {
             toast.error("field to add product")

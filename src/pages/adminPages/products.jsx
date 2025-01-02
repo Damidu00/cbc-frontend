@@ -7,13 +7,17 @@ import { Link } from 'react-router-dom';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
+  const [productsLoaded,setProductLoaded] = useState(false)
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products').then((res) => {
-      console.log(res.data);
-      setProducts(res.data);
-    });
-  }, []);
+    if(!productsLoaded){
+      axios.get('http://localhost:5000/api/products').then((res) => {
+        console.log(res.data);
+        setProducts(res.data);
+        setProductLoaded(true);
+      });
+    }
+  }, [productsLoaded]);
 
   const truncateDescription = (description, maxLength) => {
     return description.length > maxLength
@@ -25,7 +29,9 @@ export default function Products() {
     <div className="p-6 bg-gray-100 min-h-screen relative" >
       <Link to={"/admin/products/addProduct"} className='absolute right-[25px] bottom-[25px] text-[30px] bg-[#245af7] p-4 text-white rounded-xl hover:bg-[#2eb2dd] hover:text-black'><FaPlus/></Link>
       <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
-      <table className="w-full table-auto border border-gray-300 bg-white shadow-lg">
+
+      {
+        productsLoaded?<table className="w-full table-auto border border-gray-300 bg-white shadow-lg">
         <thead className="bg-gray-200">
           <tr>
             <th className="p-4 border border-gray-300 text-left">Product Id</th>
@@ -67,7 +73,7 @@ export default function Products() {
                     }).then((res) => {
                       console.log(res.data);
                       toast.success("Product deleted successfully");
-                      setProductsLoaded(false);
+                      setProductLoaded(false);
                     });
               
                   }}
@@ -80,7 +86,14 @@ export default function Products() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>:<div className="w-full h-full flex justify-center items-center">
+          <div className="w-[60px] h-[60px] border-[4px] border-gray-200 border-b-[#3b82f6] animate-spin rounded-full"></div>
+        </div>
+      }
+      
+
+
+
     </div>
   );
 }

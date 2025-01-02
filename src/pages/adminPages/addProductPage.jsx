@@ -33,12 +33,13 @@ export default function AddProductForm() {
         try {
             await axios.post("http://localhost:5000/api/products",product,{
                 headers : {
-                    Authorization : "Bearer" + token
+                    Authorization : "Bearer "+token
                 }
             })
-            toast.success("product added successfully")
-        } catch (error) {
-            console.log(error)
+            toast.success("response.data.message");
+        } catch (err) {
+            toast.error("field to add product")
+            console.log(err)
         }
 
         

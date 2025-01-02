@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaPlus, FaTrash } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
@@ -55,6 +56,23 @@ export default function Products() {
                 </button>
                 <button
                   className="p-2 bg-red-500 text-white hover:bg-red-600 focus:outline-none rounded-full"
+
+                  onClick={()=>{
+                    const token = localStorage.getItem("token");
+
+                    axios.delete(`http://localhost:5000/api/products/${product.productId}`, {
+                      headers: {
+                        Authorization: `Bearer ${token}`,
+                      },
+                    }).then((res) => {
+                      console.log(res.data);
+                      toast.success("Product deleted successfully");
+                      setProductsLoaded(false);
+                    });
+              
+                  }}
+
+
                 >
                   <FaTrash size={20} />
                 </button>

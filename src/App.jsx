@@ -13,8 +13,7 @@ function App() {
   return (
     <div className=''>
       <BrowserRouter>
-      <Toaster position="top-right"
-  reverseOrder={false}/>
+      <Toaster position="top-right"reverseOrder={false}/>
         <Routes path="/*">
           <Route path='/' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>}/>

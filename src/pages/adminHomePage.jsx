@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa"
 import { IoPeopleSharp } from "react-icons/io5";
 import Products from './adminPages/products'
 import AddProductForm from './adminPages/addProductPage'
+import DashboardPage from './adminPages/dashboardPage'
 
 export default function AdminHomePage() {
   return (
@@ -19,7 +20,7 @@ export default function AdminHomePage() {
 
         <div className="w-[80%] bg-blue-200 h-screen">
             <Routes path="/*">
-                <Route path="/dashboard" element={<h3>DashBoard</h3>}/>
+                <Route path="/dashboard" element={<DashboardPage/>}/>
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/products/addProduct' element={<AddProductForm/>}/>
             </Routes>

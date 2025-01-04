@@ -9,8 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">About Us</h3>
             <p className="text-sm">
-              We provide high-quality salon services and training courses to help you shine and succeed in the beauty industry.
-            </p>
+            We are committed to selling the best quality beauty products.</p>
           </div>
 
           {/* Section 2 */}
@@ -28,7 +27,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p className="text-sm">Mahiyanganaya, Uva Province, Sri Lanka</p>
-            <p className="text-sm">Email: info@salonpabalu.com</p>
+            <p className="text-sm">Email: cristalBeautyClear@gmail.com</p>
             <p className="text-sm">Phone: +94 77 123 4567</p>
           </div>
 
@@ -53,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Salon Pabalu. All rights reserved.
+          &copy; {new Date().getFullYear()} CBC. All rights reserved.
         </div>
       </div>
     </footer>

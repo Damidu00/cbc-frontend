@@ -5,7 +5,7 @@ import HomePage from './pages/homePage'
 import LoginPage from './pages/loginPage'
 import AdminHomePage from './pages/adminHomePage'
 import { Toaster } from 'react-hot-toast'
-import SignupPage from './signupPage'
+import SignupPage from './pages/signupPage'
 
 
 function App() {

@@ -9,6 +9,7 @@ export default function AddProductForm() {
     const [productName,setProductName]= useState("")
     const [alternativeNames,setAlterNames] = useState("")
     const [imageUrls,setImageUrls] = useState("")
+    const [imageFiles,setImageFiles] = useState([])
     const [price,setPrice] = useState("")
     const [lastPrice,setLastPrice] = useState("")
     const [stock,setStock]= useState("")
@@ -90,10 +91,12 @@ export default function AddProductForm() {
        
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Image URLs</label>
-                        <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                        <input type="file" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
                             onChange={(e)=>{
-                                setImageUrls(e.target.value)
+                                setImageFiles(e.target.files)
+                                
                             }}
+                            multiple
                         />
                     </div>
 

@@ -89,16 +89,17 @@ export default function AddProductForm() {
                     </div>
 
        
-                    <div className="flex flex-col">
-                        <label className="text-gray-600 font-medium">Image URLs</label>
-                        <input type="file" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
-                            onChange={(e)=>{
-                                setImageFiles(e.target.files)
-                                
-                            }}
-                            multiple
+                    <div className="flex flex-col space-y-2">
+                        <label className="text-gray-700 font-semibold">Image Upload</label>
+                        <input 
+                            type="file" 
+                            className="file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 file:cursor-pointer 
+                                p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
+                            onChange={(e) => setImageFiles(e.target.files)} 
+                            multiple 
                         />
                     </div>
+
 
   
                     <div className="flex space-x-4">

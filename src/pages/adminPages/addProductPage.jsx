@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import fileUploadForSupaBase from "../../utils/mediaUpload";
 
 export default function AddProductForm() {
 
@@ -18,7 +19,15 @@ export default function AddProductForm() {
 
     async function handleSubmit(){
         const altNames = alternativeNames.split(",")
-        const imgUrls = imageUrls.split(",")
+
+        const promisesArray = []
+        
+        for(let i=0; i<imageFiles.length; i++){
+            promisesArray[i] = fileUploadForSupaBase(imageFiles[i])    
+        }
+        
+        const imgUrls = await Promise.all(promisesArray)
+        console.log(imgUrls)
 
         const product = {
             productId :productId,
@@ -48,9 +57,6 @@ export default function AddProductForm() {
 
         
     }
-
-
-
 
     return (
         <div className="w-full h-screen bg-gray-200 flex items-center justify-center">

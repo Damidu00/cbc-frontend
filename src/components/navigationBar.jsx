@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle, FaShoppingBag } from "react-icons/fa";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import logo from '../assets/logo.jpg'
+import logo from '../../public/logobgremove.png'
 
 export default function NavigationBar() {
   useEffect(() => {
@@ -11,41 +11,42 @@ export default function NavigationBar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 bg-white shadow-md p-4 flex items-center justify-between z-50" data-aos="fade-down">
+    <nav className="sticky top-0 bg-white shadow-md p-4 flex items-center justify-between z-50 h-[80px] "  data-aos="fade-down">
 
-      <div className="flex items-center">
-        <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center">
+      <div className="flex items-center ">
+        <div className="w-18 h-18 bg-gray-50 rounded-full flex items-center justify-center">
           <img
             src={logo}
             alt="Logo"
-            className="w-10 h-10 rounded-full"
+            className="w-[80px] h-[80px] rounded-full cursor-pointer"
           />
         </div>
       </div>
 
 
-      <div className="text-center flex-grow">
-        <h1 className="text-xl font-bold text-gray-700">Cristal Beauty Clear</h1>
+      <div className="text-center flex-grow absolute left-[120px]" >
+        <h1 className="text-[25px] font-bold text-gray-800 font-serif">Cristal Beauty Clear</h1>
       </div>
 
 
       <div className="flex items-center space-x-6">
 
-        <Link
-          to="/products"
-          className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
-        >
-          Products
-        </Link>
+      <Link
+        to="/products"
+        className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+      >
+        Products
+      </Link>
+
         <Link
           to="/contact"
-          className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+          className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
         >
           Contact Us
         </Link>
         <Link
           to="/about"
-          className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+          className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
         >
           About Us
         </Link>
@@ -55,7 +56,7 @@ export default function NavigationBar() {
           <FaUserCircle className="w-6 h-6 text-gray-600" />
           <Link
             to="/account"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif"
           >
             Account
           </Link>
@@ -66,7 +67,7 @@ export default function NavigationBar() {
           <FaShoppingBag className="w-6 h-6 text-gray-600" />
           <Link
             to="/bag"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif"
           >
             Bag
           </Link>

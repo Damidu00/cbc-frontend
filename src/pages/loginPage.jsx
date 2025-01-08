@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
 
   const [email,setEmail] = useState("Your Email")
   const [password,setPassword] = useState("")
-
+  const navigate = useNavigate()
 
   function login(){
     axios.post("http://localhost:5000/api/users/login",{
@@ -22,13 +23,12 @@ export default function LoginPage() {
 
       localStorage.setItem("token",res.data.token)
 
-      if(res.data.type == "admin"){
-        window.location.href = "/admin"
+      if(res.data.user.type == "admin"){
+        navigate("/admin")
       }else{
-        window.location.href = "/"
+        navigate("/")
       }
       
-
     })
   }
 

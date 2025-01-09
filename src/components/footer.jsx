@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-800 text-white py-8" data-aos="fade-down">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Section 1 */}
@@ -16,10 +17,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/about" className="hover:underline">About</a></li>
-              <li><a href="/courses" className="hover:underline">Courses</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
-              <li><a href="/blog" className="hover:underline">Blog</a></li>
+              <li><Link to="/about" className="hover:underline">About</Link></li>
+              <li><Link to="/courses" className="hover:underline">Courses</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link to="/blog" className="hover:underline">Blog</Link></li>
             </ul>
           </div>
 

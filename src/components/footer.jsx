@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -35,18 +37,23 @@ export default function Footer() {
           {/* Section 4 */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-                <i className="fab fa-facebook-f"></i>
+            <div className="flex flex-col  text-white">
+
+              <a href="https://facebook.com" target="_blank" className="hover:text-gray-400 flex items-center ">
+              <FaFacebook className='m-2'/>
+              Facebook.com/cristalBeautyClear
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-                <i className="fab fa-twitter"></i>
+              <a href="https://twitter.com" target="_blank"  className="hover:text-gray-400 flex items-center">
+                <FaXTwitter className='m-2'/>
+                XTwitter.com/CBC_pvt
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-                <i className="fab fa-instagram"></i>
+              <a href="https://instagram.com" target="_blank"  className="hover:text-gray-400 flex items-center">
+                <FaInstagram className='m-2'/>
+                instagrame.com/cb_clear
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-                <i className="fab fa-linkedin-in"></i>
+              <a href="https://linkedin.com" target="_blank"  className="hover:text-gray-400 flex items-center">
+                <FaLinkedin className='m-2'/>
+                linkedin.com/cristal_beauty_clear
               </a>
             </div>
           </div>

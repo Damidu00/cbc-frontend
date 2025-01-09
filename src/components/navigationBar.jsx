@@ -39,7 +39,7 @@ export default function NavigationBar() {
       </Link>
 
         <Link
-          to="/contact"
+          to="/contactus"
           className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
         >
           Contact Us

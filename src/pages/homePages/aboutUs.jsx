@@ -4,7 +4,7 @@ export default function AboutUs() {
   return (
     <div className="bg-gray-50 min-h-screen">
 
-      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?beauty,skincare')" }}>
+      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: "url('https://img.freepik.com/free-vector/cosmetics-cream-jar-mock-up-banner-beauty-product_33099-1959.jpg')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-4xl md:text-6xl text-white font-bold">About Cristal Beauty Clear</h1>
         </div>

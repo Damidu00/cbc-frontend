@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast'
 import SignupPage from './pages/signupPage'
 import ContactUs from './pages/homePages/contactUs'
 import Products from './pages/homePages/products'
+import AboutUs from './pages/homePages/aboutUs'
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/signup' element={<SignupPage/>}/>
           <Route path='/contactus' element={<ContactUs/>}/>
           <Route path='/products' element={<Products/>}/>
+          <Route path='/aboutus' element={<AboutUs/>}/>
         </Routes>
       </BrowserRouter>
     </div>

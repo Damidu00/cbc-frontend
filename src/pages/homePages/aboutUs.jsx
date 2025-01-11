@@ -3,14 +3,14 @@ import React from 'react';
 export default function AboutUs() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section */}
+
       <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?beauty,skincare')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-4xl md:text-6xl text-white font-bold">About Cristal Beauty Clear</h1>
         </div>
       </div>
 
-      {/* Content Section */}
+
       <div className="container mx-auto py-12 px-4 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Discover the Essence of Beauty</h2>
@@ -19,7 +19,7 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Image and Text Section */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <img
@@ -36,7 +36,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Second Section */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
           <div className="order-2 md:order-1">
             <h3 className="text-2xl font-bold text-gray-800">Why Choose Us?</h3>
@@ -54,7 +54,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Team Section */}
+
       <div className="bg-white py-12">
         <div className="container mx-auto px-4 md:px-12 text-center">
           <h3 className="text-3xl font-bold text-gray-800">Meet Our Team</h3>

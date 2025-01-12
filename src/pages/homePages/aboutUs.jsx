@@ -5,14 +5,14 @@ import 'aos/dist/aos.css';
 export default function AboutUs() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true,     // Whether animation should happen only once
+      duration: 1000, 
+      once: true,    
     });
   }, []);
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section */}
+     
       <div
         className="relative bg-cover bg-center h-96"
         style={{ backgroundImage: "url('https://img.freepik.com/free-vector/cosmetics-cream-jar-mock-up-banner-beauty-product_33099-1959.jpg')" }}
@@ -27,7 +27,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Content Section */}
+     
       <div className="container mx-auto py-12 px-4 md:px-12">
         <div className="text-center mb-12">
           <h2
@@ -47,7 +47,7 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Image and Text Section */}
+  
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div data-aos="zoom-in">
             <img
@@ -67,7 +67,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Second Section */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
           <div className="order-2 md:order-1" data-aos="fade-right">
             <h3 className="text-2xl font-bold text-gray-800">Why Choose Us?</h3>
@@ -88,7 +88,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Team Section */}
+
       <div className="bg-white py-12">
         <div className="container mx-auto px-4 md:px-12 text-center">
           <h3

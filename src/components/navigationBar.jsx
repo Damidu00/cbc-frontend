@@ -15,11 +15,13 @@ export default function NavigationBar() {
 
       <div className="flex items-center ">
         <div className="w-18 h-18 bg-gray-50 rounded-full flex items-center justify-center">
+          <Link to=''>
           <img
             src={logo}
             alt="Logo"
             className="w-[80px] h-[80px] rounded-full cursor-pointer"
           />
+          </Link>
         </div>
       </div>
 
@@ -45,7 +47,7 @@ export default function NavigationBar() {
           Contact Us
         </Link>
         <Link
-          to="/about"
+          to="/aboutus"
           className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
         >
           About Us

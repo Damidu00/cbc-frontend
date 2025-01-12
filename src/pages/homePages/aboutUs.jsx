@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import NavigationBar from '../../components/navigationBar';
+import Footer from '../../components/footer';
 
 export default function AboutUs() {
   useEffect(() => {
@@ -12,6 +14,7 @@ export default function AboutUs() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
+      <NavigationBar/>
      
       <div
         className="relative bg-cover bg-center h-96"
@@ -51,7 +54,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div data-aos="zoom-in">
             <img
-              src="https://source.unsplash.com/800x600/?makeup,cosmetics"
+              src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2024-06/240610-beauty-awards-2024-face-makeup-winners-vl-social-74fb90.jpg"
               alt="Beauty Products"
               className="rounded-lg shadow-lg"
             />
@@ -80,7 +83,7 @@ export default function AboutUs() {
           </div>
           <div className="order-1 md:order-2" data-aos="zoom-in">
             <img
-              src="https://source.unsplash.com/800x600/?skincare,beauty"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-iugAQV5fmEY2kGWi7XPFpdrwRU99ackxP6KZNeHmP9uademLaY4YyIYcm8XnvaLT1OFjlGitmJXkoKp1uDAgL0c151kIoFEInsKcCcpDe8boiHWyiYnZFgF8AaXabrA2uIqwAM2Ka7Q/s1600/HEADDER.jpg"
               alt="Natural Beauty"
               className="rounded-lg shadow-lg"
             />
@@ -108,40 +111,41 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="flex flex-col items-center" data-aos="flip-left">
               <img
-                src="https://source.unsplash.com/150x150/?person,beauty"
+                src="https://d2dfxqxblmblx4.cloudfront.net/wp-content/uploads/2022/05/18111753/Instagram-Tile-GettyImages-853924196.jpg"
                 alt="Team Member"
                 className="rounded-full shadow-md"
               />
               <h4 className="mt-4 text-lg font-semibold text-gray-800">
-                Sophia Lee
+                Theekshana Jayalath
               </h4>
               <p className="text-gray-500">Founder & CEO</p>
             </div>
             <div className="flex flex-col items-center" data-aos="flip-up">
               <img
-                src="https://source.unsplash.com/150x150/?person,cosmetics"
+                src="https://media.istockphoto.com/id/1347870576/photo/happy-male-hairdresser-working-at-hair-salon-and-looking-at-camera.jpg?s=612x612&w=0&k=20&c=WTNjCR82dp7YVl7Dmyt9NqQ0TJXa56u1wWm1o9W65Cg="
                 alt="Team Member"
                 className="rounded-full shadow-md"
               />
               <h4 className="mt-4 text-lg font-semibold text-gray-800">
-                James Carter
+                Damidu Dissanayake
               </h4>
               <p className="text-gray-500">Product Manager</p>
             </div>
             <div className="flex flex-col items-center" data-aos="flip-right">
               <img
-                src="https://source.unsplash.com/150x150/?person,skincare"
+                src="https://www.shutterstock.com/image-photo/smiling-small-beauty-salon-owner-600nw-2059364630.jpg"
                 alt="Team Member"
                 className="rounded-full shadow-md"
               />
               <h4 className="mt-4 text-lg font-semibold text-gray-800">
-                Emily Davis
+                Rashmi Sugandika
               </h4>
               <p className="text-gray-500">Marketing Head</p>
             </div>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

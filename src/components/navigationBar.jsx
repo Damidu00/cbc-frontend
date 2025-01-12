@@ -15,7 +15,7 @@ export default function NavigationBar() {
 
       <div className="flex items-center ">
         <div className="w-18 h-18 bg-gray-50 rounded-full flex items-center justify-center">
-          <Link to=''>
+          <Link to='/'>
           <img
             src={logo}
             alt="Logo"
@@ -40,18 +40,30 @@ export default function NavigationBar() {
         Products
       </Link>
 
-        <Link
-          to="/contactus"
-          className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
-        >
-          Contact Us
-        </Link>
-        <Link
+
+    <Link
+        to="/feedbacks"
+        className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+      >
+        Feedbacks
+      </Link>
+
+
+      <Link
           to="/aboutus"
           className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
         >
           About Us
-        </Link>
+      </Link>
+
+
+
+      <Link
+        to="/contactus"
+        className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+      >
+        Contact Us
+      </Link>
 
 
         <div className="flex items-center space-x-2">

@@ -11,7 +11,7 @@ export default function Products() {
 
   useEffect(() => {
     if(!productsLoaded){
-      axios.get('http://localhost:5000/api/products').then((res) => {
+      axios.get(import.meta.env.VITE_BACKEND_URL + `/api/products`).then((res) => {
         console.log(res.data);
         setProducts(res.data);
         setProductLoaded(true);

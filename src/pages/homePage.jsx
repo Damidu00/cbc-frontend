@@ -41,7 +41,10 @@ export default function HomePage() {
                 style={{
                   backgroundImage: `url(${image})`,
                   backgroundPosition: 'center',
-                  backgroundSize:'cover'
+                  backgroundSize:'cover',
+                  backgroundRepeat : 'no-repeat',
+                  width:'100%',
+                  height:'100%'
                 }}
               ></div>
             ))}

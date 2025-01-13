@@ -40,6 +40,7 @@ export default function HomePage() {
                 className="w-full  flex-shrink-0 mt-5 "
                 style={{
                   backgroundImage: `url(${image})`,
+                  backgroundPosition: 'center',
                   backgroundSize:'cover'
                 }}
               ></div>

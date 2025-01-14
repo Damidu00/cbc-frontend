@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NavigationBar from '../components/navigationBar';
 import Footer from '../components/footer';
+import NewProducts from '../components/newProducts';
 
 export default function HomePage() {
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function HomePage() {
     <>
       <NavigationBar />
       <div className="bg-gray-100 h-screen">
-        <div data-aos="fade-down" className="relative h-[500px] overflow-hidden ml-5 mr-5">
+        <div data-aos="fade-down" className="relative h-[600px] overflow-hidden ml-5 mr-5">
           <div
             className="absolute w-full h-full flex transition-transform duration-1000 ease-in-out  "
             style={{ transform: `translateX(-${currentIndex * 100}%)` }} 
@@ -50,6 +51,11 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+
+            <div className=' mt-8'>
+              <NewProducts/>
+            </div>
+
       </div>
       <Footer />
     </>

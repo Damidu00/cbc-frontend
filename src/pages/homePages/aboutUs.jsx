@@ -18,7 +18,7 @@ export default function AboutUs() {
      
       <div
         className="relative bg-cover bg-center h-96"
-        style={{ backgroundImage: "url('https://img.freepik.com/free-vector/cosmetics-cream-jar-mock-up-banner-beauty-product_33099-1959.jpg')" }}
+        style={{ backgroundImage: "url('/backgroundimg.png')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1

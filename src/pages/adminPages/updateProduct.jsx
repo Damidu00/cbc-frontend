@@ -58,15 +58,15 @@ export default function UpdateProduct() {
         const token = localStorage.getItem("token")
 
         try {
-            await axios.post( import.meta.env.VITE_BACKEND_URL + "/api/products",productData,{
+            await axios.put( import.meta.env.VITE_BACKEND_URL + "/api/products/" + product.productId,productData,{
                 headers : {
                     Authorization : "Bearer "+token
                 }
             })
             navigate("/admin/products")
-            toast.success("response.data.message");
+            toast.success("product update successfully");
         } catch (err) {
-            toast.error("field to add product")
+            toast.error("field to update product")
             console.log(err)
         }
 

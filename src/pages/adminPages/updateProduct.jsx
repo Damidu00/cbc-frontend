@@ -34,15 +34,17 @@ export default function UpdateProduct() {
         const altNames = alternativeNames.split(",")
 
         const promisesArray = []
-        
-        for(let i=0; i<imageFiles.length; i++){
-            promisesArray[i] = fileUploadForSupaBase(imageFiles[i])    
+        let imgUrls = product.images
+
+        if(imageFiles.length > 0){
+            for(let i=0; i<imageFiles.length; i++){
+                promisesArray[i] = fileUploadForSupaBase(imageFiles[i])    
+            }
+            
+            imgUrls = await Promise.all(promisesArray)
         }
         
-        const imgUrls = await Promise.all(promisesArray)
-        console.log(imgUrls)
-
-        const product = {
+        const productData = {
             productId :productId,
             productName : productName,
             altNames :  altNames,
@@ -56,7 +58,7 @@ export default function UpdateProduct() {
         const token = localStorage.getItem("token")
 
         try {
-            await axios.post( import.meta.env.VITE_BACKEND_URL + "/api/products",product,{
+            await axios.post( import.meta.env.VITE_BACKEND_URL + "/api/products",productData,{
                 headers : {
                     Authorization : "Bearer "+token
                 }
@@ -171,7 +173,7 @@ export default function UpdateProduct() {
 
                     <button type="submit" className="w-full bg-blue-700 text-white p-3 rounded-md font-bold hover:bg-blue-900 transition"
                         onClick={handleSubmit}
-                    >Add Product</button>
+                    >Update Product</button>
                 </div>
             </div>
         </div>

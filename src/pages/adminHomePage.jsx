@@ -7,6 +7,7 @@ import { IoPeopleSharp } from "react-icons/io5";
 import Products from './adminPages/products'
 import AddProductForm from './adminPages/addProductPage'
 import DashboardPage from './adminPages/dashboardPage'
+import UpdateProduct from './adminPages/updateProduct'
 
 export default function AdminHomePage() {
   return (
@@ -23,6 +24,7 @@ export default function AdminHomePage() {
                 <Route path="/dashboard" element={<DashboardPage/>}/>
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/products/addProduct' element={<AddProductForm/>}/>
+                <Route path='/products/updateproduct' element={<UpdateProduct/>}/>
             </Routes>
         </div>
     </div>

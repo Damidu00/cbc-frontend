@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaPlus, FaTrash } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [productsLoaded,setProductLoaded] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if(!productsLoaded){
@@ -57,6 +58,13 @@ export default function Products() {
               <td className="p-4 border border-gray-300 text-center flex justify-center space-x-4">
                 <button
                   className="p-2 bg-yellow-400 text-white hover:bg-yellow-500 focus:outline-none rounded-full"
+
+                  onClick={()=>{
+                    navigate('updateproduct',{state : {product : product}})
+                  }}
+
+
+
                 >
                   <FaPencil size={20} />
                 </button>

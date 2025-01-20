@@ -58,13 +58,13 @@ export default function ProductInfo() {
                 <div className='w-full h-full flex items-center justify-center'>
                     {/* image part */}
                     <div className='w-[40%] h-full flex items-center justify-center' >
-                        <div className='w-30% h-[calc(100vh-200px)] p-5 '>
+                        <div className='w-[100%] h-[calc(100vh-200px)] p-5 '>
                             <img src={product.images[0]} alt="" className='w-full h-full object-cover'/>
                         </div>
                     </div>
                     {/* details part */}
                     <div className='w-[60%] h-full  flex items-center justify-center'>
-                        <div className='w-[90%] h-[calc(100vh-200px)] p-5 '>
+                        <div className='w-[1000%] h-[calc(100vh-200px)] p-5 '>
                             <h1 className='font-semibold text-gray-950 text-[40px] font-sans '>{product.productName}</h1>
                             <h1 className='font-semibold text-gray-400 text-[20px] font-serif '>{product.altNames.join(" | ")}</h1>
                             <div className='flex flex-row gap-10 items-center'>

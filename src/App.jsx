@@ -28,7 +28,7 @@ function App() {
           <Route path='/contactus' element={<ContactUs/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
-          <Route path='/productinfo' element={<ProductInfo/>}/>
+          <Route path='/productinfo/:id' element={<ProductInfo/>}/>
         </Routes>
       </BrowserRouter>
     </div>

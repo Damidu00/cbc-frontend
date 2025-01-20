@@ -4,6 +4,10 @@ import 'aos/dist/aos.css';
 import NavigationBar from '../components/navigationBar';
 import Footer from '../components/footer';
 import NewProducts from '../components/newProducts';
+import { Route, Routes } from 'react-router-dom';
+import ContactUs from './homePages/contactUs';
+import Products from './homePages/products';
+import AboutUs from './homePages/aboutUs';
 
 export default function HomePage() {
   useEffect(() => {
@@ -29,6 +33,11 @@ export default function HomePage() {
   return (
     <>
       <NavigationBar />
+      <Routes>
+        <Route path='/contactus' element={<ContactUs/>}/>
+        <Route path='/products' element={<Products/>}/>
+        <Route path='/aboutus' element={<AboutUs/>}/>
+      </Routes>
       <div className="bg-gray-100 h-screen">
         <div data-aos="fade-down" className="relative h-[600px] overflow-hidden ml-5 mr-5">
           <div

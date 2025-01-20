@@ -14,7 +14,6 @@ export default function AboutUs() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NavigationBar/>
      
       <div
         className="relative bg-cover bg-center h-96"

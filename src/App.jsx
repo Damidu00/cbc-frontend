@@ -20,13 +20,10 @@ function App() {
       <BrowserRouter>
       <Toaster position="top-right"reverseOrder={false}/>
         <Routes path="/*">
-          <Route path='/' element={<HomePage/>} />
+          <Route path='/*' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/admin/*' element={<AdminHomePage/>}/>  
           <Route path='/signup' element={<SignupPage/>}/>
-          <Route path='/contactus' element={<ContactUs/>}/>
-          <Route path='/products' element={<Products/>}/>
-          <Route path='/aboutus' element={<AboutUs/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -8,7 +8,7 @@ export default function ContactUs(){
     
     return (
         <>
-        <NavigationBar/>
+
         <div>
             
             <div className=" bg-red-400  m-5 mb-10" data-aos="fade-up">

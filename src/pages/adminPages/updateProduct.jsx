@@ -8,7 +8,7 @@ export default function UpdateProduct() {
 
     const location = useLocation()
     const navigate = useNavigate()
-    console.log(location)
+
     const product = location.state.product
 
     const altNames = product.altNames.join(",")
@@ -20,8 +20,7 @@ export default function UpdateProduct() {
 
     const [productId,setProductId] = useState(product.productId);
     const [productName,setProductName]= useState(product.productName)
-    const [alternativeNames,setAlterNames] = useState("")
-    const [imageUrls,setImageUrls] = useState("")
+    const [alternativeNames,setAlterNames] = useState(altNames)
     const [imageFiles,setImageFiles] = useState([])
     const [price,setPrice] = useState(product.price)
     const [lastPrice,setLastPrice] = useState(product.lastPrice)
@@ -106,7 +105,7 @@ export default function UpdateProduct() {
                     <div className="flex flex-col">
                         <label className="text-gray-600 font-medium">Alternative Names</label>
                         <input type="text" className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400" 
-                        value={altNames}
+                        value={alternativeNames}
                             onChange={(e)=>{
                                 setAlterNames(e.target.value)
                             }}

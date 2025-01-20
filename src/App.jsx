@@ -9,6 +9,7 @@ import SignupPage from './pages/signupPage'
 import ContactUs from './pages/homePages/contactUs'
 import Products from './pages/homePages/products'
 import AboutUs from './pages/homePages/aboutUs'
+import ProductInfo from './pages/homePages/productInfo'
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/contactus' element={<ContactUs/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
+          <Route path='/productinfo' element={<ProductInfo/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -8,7 +8,7 @@ export default function ImageSlider(props) {
   return (
     <>
       <div className='w-full h-[400px] flex items-center flex-col  '>
-      <img src={props.images[activeImage]} className='w-full object-cover rounded-xl'/>
+      <img src={props.images[activeImage]} className='w-full h-full object-cover rounded-xl'/>
       
     </div>
     <div className=' w-full h-[130px] -mt-5 '>

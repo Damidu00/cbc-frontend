@@ -58,8 +58,8 @@ export default function ProductInfo() {
             status == "found" && (
                 <div className='w-full h-full flex items-center justify-center'>
                     {/* image part */}
-                    <div className='w-[40%] h-full flex items-center justify-center ml-5' >
-                        <div className='w-[100%] h-[calc(100vh-150px)] p-5 '>
+                    <div className='w-[40%] flex items-center justify-center ml-5' >
+                        <div className='w-[100%] h-full p-5 '>
                             <ImageSlider images={product.images}/>
                         </div>
                     </div>

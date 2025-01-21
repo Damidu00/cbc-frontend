@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import NavigationBar from '../../components/navigationBar';
 import NotFoundPage from '../../components/NotFoundPage';
 import { DiCelluloid } from 'react-icons/di';
+import ImageSlider from '../../components/imageSlider';
 
 export default function ProductInfo() {
 
@@ -59,12 +60,12 @@ export default function ProductInfo() {
                     {/* image part */}
                     <div className='w-[40%] h-full flex items-center justify-center ml-5' >
                         <div className='w-[100%] h-[calc(100vh-150px)] p-5 '>
-                            <img src={product.images[0]} alt="" className='w-full  object-cover'/>
+                            <ImageSlider images={product.images}/>
                         </div>
                     </div>
                     {/* details part */}
-                    <div className='w-[60%] h-full  flex items-center justify-center'>
-                        <div className='w-[1000%] h-[calc(100vh-100px)] p-5 '>
+                    <div className='w-[60%] h-full  flex items-center justify-center '>
+                        <div className='w-[80%] h-[calc(100vh-200px)] -ml-[100px]'>
                             <h1 className='font-semibold text-gray-950 text-[40px] font-sans '>{product.productName}</h1>
                             <h1 className='font-semibold text-gray-400 text-[20px] font-serif '>{product.altNames.join(" | ")}</h1>
                             <div className='flex flex-row gap-5 items-center'>
@@ -72,9 +73,9 @@ export default function ProductInfo() {
                                     (product.price > product.lastPrice)&&
                                     <p className='text-gray-600 font-semibold font-mono text-[20px] line-through' >{"LKR:" + product.price}</p>                                    
                                 }
-                                <p className='text-red-600 font-semibold font-mono text-[35px] ' >{"Rs:" + product.lastPrice}</p>
-                                                              
+                                <p className='text-red-600 font-semibold font-mono text-[35px] ' >{"Rs:" + product.lastPrice}</p>                              
                             </div> 
+                            <p className='font-thin text-[18px] from-neutral-800 text-justify'>{product.description}</p>
                         </div>
                     </div>
                 </div>

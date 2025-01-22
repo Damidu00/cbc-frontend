@@ -40,7 +40,6 @@ export default function ProductInfo() {
 
   return (
     <>
-    <NavigationBar/>
     <div className='w-full h-[calc(100vh-80px)] '>
         {
             status == "Loading" && (

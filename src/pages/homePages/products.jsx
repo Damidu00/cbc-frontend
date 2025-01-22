@@ -25,7 +25,7 @@ export default function Products() {
 
   return (
     <>
-    <NavigationBar/>
+
     <div className='w-full h-full overflow-y-scroll bg-red-600'>
         <ProductCard/>
     </div>

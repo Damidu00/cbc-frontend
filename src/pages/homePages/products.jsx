@@ -24,8 +24,12 @@ export default function Products() {
   ,[])
 
   return (
-    <div className='w-full bg-red-600 h-full overflow-y-scroll'>
-      
+    <div className=' h-full flex flex-wrap   overflow-hidden '>
+      {
+        products.map((product)=>
+          <ProductCard product={product}/>
+        )
+      }
     </div>
   )
 }

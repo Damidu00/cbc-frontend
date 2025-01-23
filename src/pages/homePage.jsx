@@ -9,6 +9,7 @@ import ContactUs from './homePages/contactUs';
 import Products from './homePages/products';
 import AboutUs from './homePages/aboutUs';
 import ProductInfo from './homePages/productInfo';
+import Home from '../components/home';
 
 export default function HomePage() {
   useEffect(() => {
@@ -42,7 +43,8 @@ export default function HomePage() {
           <Route path='/productinfo/:id' element={<ProductInfo/>}/>
         </Routes>
       </div>
-      <Footer />
+      {/* <Home/> */}
+      {/* <Footer /> */}
     </>
   );
 }

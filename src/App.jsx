@@ -6,10 +6,7 @@ import LoginPage from './pages/loginPage'
 import AdminHomePage from './pages/adminHomePage'
 import { Toaster } from 'react-hot-toast'
 import SignupPage from './pages/signupPage'
-import ContactUs from './pages/homePages/contactUs'
-import Products from './pages/homePages/products'
-import AboutUs from './pages/homePages/aboutUs'
-import ProductInfo from './pages/homePages/productInfo'
+
 
 
 

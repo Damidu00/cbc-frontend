@@ -24,11 +24,8 @@ export default function Products() {
   ,[])
 
   return (
-    <>
-
-    <div className='w-full h-full overflow-y-scroll bg-red-600'>
-        <ProductCard/>
+    <div className='w-full bg-red-600 h-full overflow-y-scroll'>
+      
     </div>
-    </>
   )
 }

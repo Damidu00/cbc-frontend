@@ -6,7 +6,7 @@ export default function ProductCard(props) {
     <>
     <Link>
         <div className='bg-red-300 h-[300px] w-[100px]'>
-
+          
         </div>
     </Link>
     </>

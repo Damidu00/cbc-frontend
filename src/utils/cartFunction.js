@@ -27,6 +27,7 @@ export function addTocart(productId,qty){
             cart[index].qty = newQty
         }
     }
+    saveCart(cart)
 }
 
 export function saveCart(cart){

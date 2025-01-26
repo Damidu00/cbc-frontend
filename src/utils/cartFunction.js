@@ -6,3 +6,25 @@ export function loadCart(){
         return []
     }
 }
+
+export function addTocart(productId,qty){
+    const cart = loadCart()
+
+    const index = cart.findIndex(
+        (item)=>{
+            item.productId == productId
+        }
+    )
+    if(index == -1){
+        cart.push(
+            {productId, qty}
+        )
+    }else{
+        const newQty = cart[index].qty + qty
+        if(newQty<=0){
+            cart.splice(index,1)
+        }else{
+            cart[index].qty = newQty
+        }
+    }
+}

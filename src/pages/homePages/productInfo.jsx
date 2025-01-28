@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import NotFoundPage from '../../components/NotFoundPage';
 import ImageSlider from '../../components/imageSlider';
-import { addToCart } from '../../utils/cartFunction';
+import { addToCart, clearCart } from '../../utils/cartFunction';
 import toast from 'react-hot-toast';
 
 export default function ProductInfo() {

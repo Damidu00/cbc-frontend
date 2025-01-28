@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom'
-import NavigationBar from '../../components/navigationBar';
 import NotFoundPage from '../../components/NotFoundPage';
-import { DiCelluloid } from 'react-icons/di';
 import ImageSlider from '../../components/imageSlider';
+import { addToCart } from '../../utils/cartFunction';
+import toast from 'react-hot-toast';
 
 export default function ProductInfo() {
 
@@ -37,6 +36,12 @@ export default function ProductInfo() {
 
 
     },[])
+
+
+    function clickAddToCart(){
+        addToCart(product.productId,1)
+        toast.success("Product Added To Cart")
+    }
 
   return (
     <>
@@ -75,7 +80,10 @@ export default function ProductInfo() {
                                 <p className='text-red-600 font-semibold font-mono text-[35px] ' >{"Rs:" + product.lastPrice}</p>                              
                             </div> 
                             <p className='font-thin text-[18px] from-neutral-800 text-justify'>{product.description}</p>
+
+                            <button onClick={clickAddToCart} className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 transition-all duration-300 mt-10">Add To Cart</button>
                         </div>
+                        
                     </div>
                 </div>
             )

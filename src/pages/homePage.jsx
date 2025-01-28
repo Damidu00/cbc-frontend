@@ -10,6 +10,7 @@ import Products from './homePages/products';
 import AboutUs from './homePages/aboutUs';
 import ProductInfo from './homePages/productInfo';
 import Home from '../components/home';
+import CartPage from './homePages/cartPage';
 
 export default function HomePage() {
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function HomePage() {
           <Route path='/products' element={<Products/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/productinfo/:id' element={<ProductInfo/>}/>
+          <Route path='/cart' element={<CartPage/>}/>
         </Routes>
       </div>
       {/* <Home/> */}

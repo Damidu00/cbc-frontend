@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { loadCart } from '../../utils/cartFunction'
+import CartComponent from '../../components/cartComponent'
 
 export default function CartPage() {
 
@@ -13,12 +14,12 @@ export default function CartPage() {
     )
 
   return (
-    <div className="w-full h-full overflow-y-scroll flex flex-wrap justify-center">
+    <div className="w-full h-full overflow-y-scroll flex flex-col  items-center">
       {
         cart.map(
           (item)=>{
             return(
-              <span>{item.productId} X {item.qty}</span>
+              <CartComponent key={item.productId} productId={item.productId} qty={item.qty} />
             )
           }
         )

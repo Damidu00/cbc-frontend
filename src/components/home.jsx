@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NewProducts from './newProducts'
+import AOS from 'aos';
 
 export default function Home() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+
+    useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
+  
+   const images = [
+      'public/ban1.png',
+      'public/ban2.png',
+      'public/ban3.png',
+    ]
+  
+  
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); 
+      }, 5000); 
+  
+      return () => clearInterval(interval); 
+    }, [images.length]);
+
+
   return (
           <div className="bg-gray-100 h-screen">
             <div data-aos="fade-down" className="relative h-[600px] overflow-hidden ml-5 mr-5">

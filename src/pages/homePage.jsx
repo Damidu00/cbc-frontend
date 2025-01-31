@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NavigationBar from '../components/navigationBar';
 import Footer from '../components/footer';
@@ -13,25 +12,7 @@ import Home from '../components/home';
 import CartPage from './homePages/cartPage';
 
 export default function HomePage() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
- const images = [
-    'public/ban1.png',
-    'public/ban2.png',
-    'public/ban3.png',
-  ]
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); 
-    }, 5000); 
-
-    return () => clearInterval(interval); 
-  }, [images.length]);
+  
 
   return (
     <>
@@ -43,10 +24,13 @@ export default function HomePage() {
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/productinfo/:id' element={<ProductInfo/>}/>
           <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/' element={<Home/>}/>
+
         </Routes>
       </div>
       {/* <Home/> */}
-      {/* <Footer /> */}
+
+      <Footer />
     </>
   );
 }

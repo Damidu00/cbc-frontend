@@ -80,7 +80,7 @@ export default function NavigationBar() {
         <div className="flex items-center space-x-2">
           <FaShoppingBag className="w-6 h-6 text-gray-600" />
           <Link
-            to="/bag"
+            to="/cart"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif"
           >
             Bag

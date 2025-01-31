@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { loadCart } from '../../utils/cartFunction'
 import CartComponent from '../../components/cartComponent'
-import { FaRecycle } from 'react-icons/fa'
 import axios from 'axios'
 
 export default function CartPage() {
@@ -28,7 +27,22 @@ export default function CartPage() {
     )
 
     function onOrderCheckOutClick(){
-
+      const token = localStorage.getItem("token");
+      if(token == null){
+        return;
+      }
+      axios.post(import.meta.env.VITE_BACKEND_URL + "/api/orders",{
+        orderedItems : cart,
+        name : "damidu nayanajith",
+        address : "8th mile post rideemaliyadda",
+        phone : "0766708311"
+      },{
+        headers : {
+            Authorization : "Bearer "+token
+        }
+    }).then((res)=>{
+        console.log(res.data)
+      })
     }
 
   return (
@@ -59,7 +73,7 @@ export default function CartPage() {
     <h1 className='text-xl mr-5 mt-5 text-red-600 font-extrabold'>Total: LKR-: {labeledTotal.toFixed(2)}</h1>
     <h1 className='text-xl mr-5 text-red-600 font-extrabold'>Discount: LKR-: {(labeledTotal - total).toFixed(2)}</h1>
     <h1 className='text-xl mr-5 text-red-600 font-extrabold'>Grand Total: LKR-: {total.toFixed(2)}</h1>
-    <button className='bg-black p-2 text-white rounded-lg w-[300px] mt-5 hover:bg-gray-600' >Checkout</button>
+    <button onClick={onOrderCheckOutClick} className='bg-black p-2 text-white rounded-lg w-[300px] mt-5 hover:bg-gray-600' >Checkout</button>
 </div>
   )
 }

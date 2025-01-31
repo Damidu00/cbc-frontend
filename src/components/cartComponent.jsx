@@ -34,45 +34,24 @@ export default function CartComponent(props) {
     )
 
   return (
-    <tr className="items-center hover:bg-gray-100 p-4 transition duration-300 ease-in-out shadow-md">
-    {/* Product Image */}
-    <td className="text-center">
-        <img
-            src={product?.images?.[0]}
-            className="w-[100px] h-[100px] object-cover mx-auto rounded-lg shadow-md transform hover:scale-105 transition duration-200 ease-in-out"
-        />
+    <tr className=' items-center border-b border-gray-600 hover:bg-gray-200 p-4'>
+    <td >
+        <img src={product?.images?.[0]} className='w-[100px] h-[100px] object-cover mx-auto rounded-lg' />
     </td>
-
-    {/* Product Name */}
-    <td className="text-center text-lg font-semibold text-gray-800">{product?.productName}</td>
-
-    {/* Product ID */}
-    <td className="text-center text-gray-600">{productId}</td>
-
-    {/* Quantity with Buttons */}
-    <td className="flex items-center justify-center gap-5 p-2 rounded-md bg-gray-50 shadow-md">
-        <button className="text-lg text-blue-600 hover:text-blue-800 p-2 bg-gray-300 rounded-lg transform hover:scale-105 transition duration-200 ease-in-out">
+    <td className='text-center'>{product?.productName}</td>
+    <td className='text-center'>{productId}</td>
+    <td className="flex items-center justify-center gap-5 p-2 rounded-md  ">
+        <button className="text-lg text-blue-600 hover:text-blue-800 p-2 bg-gray-300 rounded-lg">
             <FaAngleUp />
         </button>
         <p className="text-lg font-semibold text-gray-700">{qty}</p>
-        <button className="text-lg text-red-600 hover:text-red-800 bg-gray-300 rounded-lg p-2 transform hover:scale-105 transition duration-200 ease-in-out">
+        <button className="text-lg text-red-600 hover:text-red-800 bg-gray-300 rounded-lg p-2">
             <FaAngleDown />
         </button>
     </td>
-
-    {/* Last Price */}
-    <td className="text-center text-gray-800 font-semibold">{(product?.lastPrice)}</td>
-
-    {/* Total Price */}
-    <td className="text-center  rounded-lg font-semibold text-2xl text-gray-800 text-red-600">
-        {(product?.lastPrice * qty).toFixed(2)}
-    </td>
-
-    {/* Delete Icon */}
-    <td className="flex items-center justify-center font-bold text-3xl text-gray-600 hover:text-red-800 cursor-pointer">
-        <MdDeleteForever className="transform hover:scale-110 transition duration-200 ease-in-out" />
-    </td>
+    <td className='text-center'>{(product?.lastPrice)}</td>
+    <td className='text-center bg-gray-200 rounded-'>{(product?.lastPrice * qty).toFixed(2)}</td>
+    <td className=' flex items-center justify-center font-bold text-4xl'><MdDeleteForever className=' flex items-center justify-center'/></td>
 </tr>
-
   )
 }

@@ -3,18 +3,33 @@ import { useEffect } from 'react'
 import { loadCart } from '../../utils/cartFunction'
 import CartComponent from '../../components/cartComponent'
 import { FaRecycle } from 'react-icons/fa'
+import axios from 'axios'
 
 export default function CartPage() {
 
     const [cart,setCart] = useState([])
-
+    const [total,setTotal] = useState(0)
+    const [labeledTotal, setLabeledTotal] = useState(0)
     useEffect(
         ()=>{
             setCart(loadCart())
+            axios.post(import.meta.env.VITE_BACKEND_URL + "/api/orders/quote",{
+              orderedItems : loadCart()
+          }).then(
+            (res)=>{
+              console.log(res.data)
+              setTotal(res.data.total)
+              setLabeledTotal(res.data.labeledTotal)
+              
+            }
+          )
+
         },[]
     )
 
-    
+    function onOrderCheckOutClick(){
+
+    }
 
   return (
     <div className="w-full h-full overflow-y-scroll flex flex-col items-end">
@@ -41,6 +56,9 @@ export default function CartPage() {
             }
         </tbody>
     </table>
+    <h1 className='text-xl mr-5 mt-5 text-red-600 font-extrabold'>Total: LKR-: {labeledTotal.toFixed(2)}</h1>
+    <h1 className='text-xl mr-5 text-red-600 font-extrabold'>Discount: LKR-: {(labeledTotal - total).toFixed(2)}</h1>
+    <h1 className='text-xl mr-5 text-red-600 font-extrabold'>Grand Total: LKR-: {total.toFixed(2)}</h1>
     <button className='bg-black p-2 text-white rounded-lg w-[300px] mt-5 hover:bg-gray-600' >Checkout</button>
 </div>
   )

@@ -11,11 +11,11 @@ export default function Home() {
     }, []);
   
    const images = [
-      'public/ban1.png',
       'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban1.png',
-      'public/ban3.png',
+      'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban2.png',
+      'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban3.png',
     ]
-  
+    
   
   
     useEffect(() => {

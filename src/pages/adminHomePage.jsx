@@ -8,6 +8,7 @@ import Products from './adminPages/products'
 import AddProductForm from './adminPages/addProductPage'
 import DashboardPage from './adminPages/dashboardPage'
 import UpdateProduct from './adminPages/updateProduct'
+import Feedback from './adminPages/feedback'
 
 export default function AdminHomePage() {
   return (
@@ -15,6 +16,7 @@ export default function AdminHomePage() {
         <div className='w-[20%] h-screen bg-blue-900 flex flex-col items-center ' >
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/dashboard"><BsGraphDown className='mr-2' />Dashboard</Link>
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/products"><AiOutlineProduct className='mr-2' />Products</Link>
+            <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/feedbacks"><AiOutlineProduct className='mr-2' />Feedbacks</Link>
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/orders"><FaShoppingCart className='mr-2' />Orders</Link>
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/customers"><IoPeopleSharp className='mr-2' />Customers</Link>
         </div>
@@ -25,6 +27,8 @@ export default function AdminHomePage() {
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/products/addProduct' element={<AddProductForm/>}/>
                 <Route path='/products/updateproduct' element={<UpdateProduct/>}/>
+                <Route path='/feedbacks' element={<Feedback/>}/>
+
             </Routes>
         </div>
     </div>

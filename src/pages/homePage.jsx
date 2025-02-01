@@ -10,6 +10,8 @@ import AboutUs from './homePages/aboutUs';
 import ProductInfo from './homePages/productInfo';
 import Home from '../components/home';
 import CartPage from './homePages/cartPage';
+import FeedbackCart from '../components/feedbackCart';
+import Feedbacks from './homePages/feedbacks';
 
 export default function HomePage() {
   
@@ -19,12 +21,13 @@ export default function HomePage() {
       <NavigationBar />
       <div>
         <Routes path="/">
-        <Route path='/contactus' element={<ContactUs/>}/>
+          <Route path='/contactus' element={<ContactUs/>}/>
+          <Route path='/' element={<Home/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/productinfo/:id' element={<ProductInfo/>}/>
           <Route path='/cart' element={<CartPage/>}/>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/feedbacks' element={<Feedbacks/>}/>
 
         </Routes>
       </div>

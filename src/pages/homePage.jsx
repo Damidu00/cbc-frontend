@@ -12,6 +12,7 @@ import Home from '../components/home';
 import CartPage from './homePages/cartPage';
 import FeedbackCart from '../components/feedbackCart';
 import Feedbacks from './homePages/feedbacks';
+import AddFeedback from './homePages/addFeedback';
 
 export default function HomePage() {
   
@@ -28,6 +29,7 @@ export default function HomePage() {
           <Route path='/productinfo/:id' element={<ProductInfo/>}/>
           <Route path='/cart' element={<CartPage/>}/>
           <Route path='/feedbacks' element={<Feedbacks/>}/>
+          <Route path='/addfeedback' element={<AddFeedback/>}/>
 
         </Routes>
       </div>

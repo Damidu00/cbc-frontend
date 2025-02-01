@@ -14,14 +14,7 @@ export default function Feedbacks() {
         .get(import.meta.env.VITE_BACKEND_URL + "/api/feedbacks/")
         .then((res) => {
           console.log( res.data);
-
-          if (Array.isArray(res.data)) {
-            setFeedbacks(res.data);
-          } else if (res.data && Array.isArray(res.data.feedbacks)) {
-            setFeedbacks(res.data.feedbacks);
-          } else {
-            throw new Error("Invalid API response format");
-          }
+          setFeedbacks(res.data.feedbacks)
 
           setLoadingStatus('loaded');
         })

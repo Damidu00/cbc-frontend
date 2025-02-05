@@ -29,9 +29,10 @@ export default function Feedback() {
                         <tr key={index} className='border-b'>
                             <td className='px-6 py-4 text-sm text-gray-900'>{feedback.feedbackId}</td>
                             <td className='px-6 py-4 text-sm text-gray-900'>{feedback.message}</td>
-                            <td className='px-6 py-4 text-sm text-gray-900'>{feedback.userName}</td>
-                            <td className='px-6 py-4 text-sm text-gray-900'>
+                            <td className='px-6 py-4 text-sm text-gray-900'>{feedback.user_name}</td>
+                            <td className='px-6 py-4 text-sm text-gray-900 flex gap-3'>
                                 <button className='bg-blue-500 text-white px-4 py-2 rounded'>Reply</button>
+                                <button className='bg-red-500 text-white px-4 py-2 rounded'>Delete</button>
                             </td>
                         </tr>
                     )) : (

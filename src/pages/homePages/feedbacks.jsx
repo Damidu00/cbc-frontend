@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import FeedbackCart from '../../components/feedbackCart';
 import { Link } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import feedbackCover from '../../../public/feedbackCover.mp4'
 
 export default function Feedbacks() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -31,9 +32,17 @@ export default function Feedbacks() {
   return (
     <div className='h-screen bg-gray-200 flex p-4'>
       <Link to={"/addfeedback"} className='absolute right-[40px] top-[95px] text-[15px] bg-black p-4 text-white rounded-xl hover:bg-gray-300 hover:text-black'>Add Your Feedback</Link>
-      {/* Left Image Part */}
-      <div className='w-[70%] h-[600px] p-2 flex justify-center '>
-        <img src={feedbackImg} alt="Feedback" className='h-[600px]' />
+      {/* Left Animated Video Part */}
+      <div className='w-[70%] h-[500px] p-2 flex justify-center relative overflow-hidden mt-10'>
+        <video 
+          className='absolute top-0 left-0 w-full h-full object-cover' 
+          autoPlay 
+          loop 
+          muted
+          >
+          <source src={feedbackCover} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Right Feedback Part */}

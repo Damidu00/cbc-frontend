@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FeedbackCart({ feedback }) {
   return (
-    <div className='flex justify-center p-4 -ml-10'>
+    <div className='flex justify-center p-4 '>
       <div className='w-full max-w-xl bg-white shadow-md rounded-xl p-6 border border-gray-200'>
         <h1 className='text-3xl font-semibold text-black mb-4'>Customer Feedback</h1>
         

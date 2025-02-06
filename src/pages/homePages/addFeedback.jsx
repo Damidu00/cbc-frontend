@@ -36,7 +36,7 @@ export default function AddFeedback() {
       <div className="bg-white shadow-2xl rounded-2xl p-8 max-w-lg w-full text-center">
         <h2 className="text-3xl font-bold text-blue-600">We Value Your Feedback</h2>
         <p className="text-gray-700 mt-4">
-          At Cristal Beauty Clear, we take pride in providing exceptional beauty products and services to enhance your confidence and charm.
+          At Crystal Beauty Clear, we take pride in providing exceptional beauty products and services to enhance your confidence and charm.
           Your satisfaction is our priority, and we strive for excellence in everything we do. However, if we ever fall short, we sincerely apologize.
           Your feedback helps us improve and serve you better. Please share your thoughts below—we truly value your voice.
         </p>

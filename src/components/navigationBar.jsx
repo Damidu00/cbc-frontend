@@ -27,7 +27,7 @@ export default function NavigationBar() {
 
 
       <div className="text-center flex-grow absolute left-[120px]" >
-        <h1 className="text-[25px] font-bold text-gray-800 font-serif">Cristal Beauty Clear</h1>
+        <h1 className="text-[25px] font-bold text-gray-800 font-serif">Crystal Beauty Clear</h1>
       </div>
 
 

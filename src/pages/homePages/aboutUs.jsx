@@ -24,7 +24,7 @@ export default function AboutUs() {
             className="text-4xl md:text-6xl text-white font-bold"
             data-aos="fade-down"
           >
-            About Cristal Beauty Clear
+            About Crystal Beauty Clear
           </h1>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function AboutUs() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            At Cristal Beauty Clear, we believe in celebrating natural beauty
+            At Crystal Beauty Clear, we believe in celebrating natural beauty
             while enhancing it with our premium products. From skincare to
             cosmetics, we are here to bring out the best version of you.
           </p>
@@ -61,7 +61,7 @@ export default function AboutUs() {
           <div data-aos="fade-left">
             <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
             <p className="text-gray-600 mt-4">
-              Cristal Beauty Clear is dedicated to creating innovative,
+              Crystal Beauty Clear is dedicated to creating innovative,
               eco-friendly beauty products that not only enhance your appearance
               but also nourish your skin. Our mission is to empower individuals to
               embrace their unique beauty.
@@ -76,7 +76,7 @@ export default function AboutUs() {
             <p className="text-gray-600 mt-4">
               Our products are made with the finest ingredients, designed for all
               skin types, and formulated with care to provide lasting results.
-              Choose Cristal Beauty Clear for quality, sustainability, and a
+              Choose Crystal Beauty Clear for quality, sustainability, and a
               promise of excellence.
             </p>
           </div>

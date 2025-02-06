@@ -5,6 +5,8 @@ import toast from 'react-hot-toast';
 export default function Feedback() {
     const [feedbacks, setFeedbacks] = useState([]);
     const [feedbacksLoaded,setFeedbacksLoaded] = useState(false)
+    const [replyingTo,setReplyingTo] = useState(null)
+    const [replyText,setReplyText] = useState('')
 
 
     useEffect(() => {
@@ -17,26 +19,73 @@ export default function Feedback() {
             .catch(err => console.error("Error fetching feedbacks:", err));
     }, [feedbacksLoaded]);
 
+    const handleReplySubmit = (feedbackId)=>{
+        if(!replyText.trim()){
+            toast.error("You must enter a reply")
+            return;
+        }
+    
+
+        axios.post(import.meta.env.VITE_BACKEND_URL + "/api/feedbacks/reply",{
+            feedbackId,
+            message : replyText
+        }).then((res)=>{
+            toast.success("Replied succsessfully")
+            setReplyingTo(null);
+            setReplyText("");
+            setFeedbacksLoaded(false);
+        }).catch(()=>{
+            toast.error("error submit reply!")
+        })
+
+    }
+
+
+
     return (
         <div className='w-full h-screen bg-gray-100 p-5'>
             {
                feedbacksLoaded? <table className='min-w-full bg-white shadow-md rounded-lg'>
                 <thead>
                     <tr className='border-b'>
-                        <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>FeedbackId</th>
+                        <th className='px-6 py-3 text-left text-sm font-medium text-gray-500 '>FeedbackId</th>
                         <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>Message</th>
                         <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>User Name</th>
+                        <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>Status</th>
                         <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {feedbacks.length > 0 ? feedbacks.map((feedback, index) => (
-                        <tr key={index} className='border-b'>
+                        <tr key={index} className='border-b hover:bg-gray-200'>
                             <td className='px-6 py-4 text-sm text-gray-900'>{feedback.feedbackId}</td>
                             <td className='px-6 py-4 text-sm text-gray-900'>{feedback.message}</td>
                             <td className='px-6 py-4 text-sm text-gray-900'>{feedback.user_name}</td>
+                            <td className='px-6 py-4 text-sm text-gray-900'>{feedback.status}</td>
                             <td className='px-6 py-4 text-sm text-gray-900 flex gap-3'>
-                                <button className='bg-blue-500 text-white px-4 py-2 rounded'>Reply</button>
+                                <button className='bg-blue-500 text-white px-4 py-2 rounded'
+                                onClick={()=>setReplyingTo(replyingTo === feedback.feedbackId ? null : feedback.feedbackId)}                                
+                                >Reply</button>
+
+                                        {replyingTo === feedback.feedbackId && (
+                                            <div className="flex gap-2">
+                                                <input
+                                                    type="text"
+                                                    className="border p-2 rounded w-64"
+                                                    placeholder="Type your reply..."
+                                                    value={replyText}
+                                                    onChange={(e) => setReplyText(e.target.value)}
+                                                />
+                                                <button
+                                                    className="bg-green-500 text-white px-4 py-2 rounded"
+                                                    onClick={() => handleReplySubmit(feedback.feedbackId)}
+                                                >
+                                                    Send
+                                                </button>
+                                            </div>
+                                        )}
+
+
                                 <button className='bg-red-500 text-white px-4 py-2 rounded'
                                 
                                 onClick={()=>{

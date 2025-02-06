@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FeedbackCart({ feedback }) {
   return (
-    <div className='flex justify-center p-4'>
+    <div className='flex justify-center p-4 -ml-10'>
       <div className='w-full max-w-xl bg-white shadow-md rounded-xl p-6 border border-gray-200'>
         <h1 className='text-3xl font-semibold text-black mb-4'>Customer Feedback</h1>
         
@@ -14,13 +14,13 @@ export default function FeedbackCart({ feedback }) {
         <p className='text-gray-900'>{feedback.message || "No message provided."}</p>
 
         <div className='mt-6 p-4 bg-gray-100 rounded-lg'>
-          <h2 className='text-lg font-medium text-gray-900'>Reply</h2>
+          <h2 className='text-lg font-medium text-gray-900'>Admin Reply</h2>
           {feedback.status === 'replied' && feedback.adminReply?.length > 0 ? (
             feedback.adminReply.map((reply, index) => (
-              <p key={index} className='text-gray-700'>{reply.message}</p>
+              <p key={index} className='text-gray-700 bg-gray-300 rounded p-2'>{reply.message}</p>
             ))
           ) : (
-            <p className=' text-red-500'>Not replied yet</p>
+            <p className=' text-red-500'>Admin not replied yet</p>
           )}
         </div>
       </div>

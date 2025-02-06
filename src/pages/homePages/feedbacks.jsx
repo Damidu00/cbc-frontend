@@ -10,6 +10,7 @@ import feedbackCover from '../../../public/feedbackCover.mp4'
 export default function Feedbacks() {
   const [feedbacks, setFeedbacks] = useState([]);
   const [loadingStatus, setLoadingStatus] = useState('loading');
+  const [feedbacksLoaded,setFeedbacksLoaded] = useState(false)
 
   useEffect(() => {
     if (loadingStatus === 'loading') {
@@ -18,7 +19,7 @@ export default function Feedbacks() {
         .then((res) => {
           console.log( res.data);
           setFeedbacks(res.data.feedbacks)
-
+          setFeedbacksLoaded(true)
           setLoadingStatus('loaded');
         })
         .catch((error) => {
@@ -46,7 +47,9 @@ export default function Feedbacks() {
       </div>
 
       {/* Right Feedback Part */}
-      <div className='overflow-y-scroll w-[50%] h-[650px]'>
+
+      {
+        feedbacksLoaded ? <div className='overflow-y-scroll w-[50%] h-[650px]'>
         {feedbacks.length > 0 ? (
           feedbacks.map((feedback) => (
             <FeedbackCart key={feedback._id} feedback={feedback} />
@@ -54,7 +57,11 @@ export default function Feedbacks() {
         ) : (
           <p className="text-white text-center p-4">No feedbacks available</p>
         )}
-      </div>
+      </div>:<div className="w-full h-full flex justify-center items-center">
+        <div className=" w-[100px] h-[100px] border-[6px] border-gray-300 border-b-[#3b82f6] animate-spin rounded-full"></div>
+    </div>
+      }
+
     </div>
   );
 }

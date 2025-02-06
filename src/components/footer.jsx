@@ -30,7 +30,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p className="text-sm">Mahiyanganaya, Uva Province, Sri Lanka</p>
-            <p className="text-sm">Email: cristalBeautyClear@gmail.com</p>
+            <p className="text-sm">Email: crystalBeautyclear@gmail.com</p>
             <p className="text-sm">Phone: +94 77 123 4567</p>
           </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
               <a href="https://facebook.com" target="_blank" className="hover:text-gray-400 flex items-center ">
               <FaFacebook className='m-2'/>
-              Facebook.com/cristalBeautyClear
+              Facebook.com/crystalBeautyClear
               </a>
               <a href="https://twitter.com" target="_blank"  className="hover:text-gray-400 flex items-center">
                 <FaXTwitter className='m-2'/>
@@ -53,7 +53,7 @@ export default function Footer() {
               </a>
               <a href="https://linkedin.com" target="_blank"  className="hover:text-gray-400 flex items-center">
                 <FaLinkedin className='m-2'/>
-                linkedin.com/cristal_beauty_clear
+                linkedin.com/crystal_beauty_clear
               </a>
             </div>
           </div>

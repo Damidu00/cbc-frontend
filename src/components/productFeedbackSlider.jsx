@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function ProductFeedbackSlider({ productFeedbacks }) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,7 +27,7 @@ export default function ProductFeedbackSlider({ productFeedbacks }) {
         </div>
   
         {/* Navigation Buttons */}
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-4 ">
           <button
             onClick={prevFeedback}
             disabled={currentIndex === 0}
@@ -46,6 +47,9 @@ export default function ProductFeedbackSlider({ productFeedbacks }) {
           >
             <FaArrowRight />
           </button>
+
+            <Link to={'/addproductfeedback'} className="p-3 bg-black text-white rounded-lg hover:bg-slate-500 ml-[120px]">Add Your Feedback</Link>
+
         </div>
       </div>
     );

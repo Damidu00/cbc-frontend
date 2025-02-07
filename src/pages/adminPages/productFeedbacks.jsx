@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 export default function ProductFeedbacks() {
 
@@ -46,7 +47,20 @@ export default function ProductFeedbacks() {
                             
                             <div className='flex gap-2'>
                                 <button className='p-3 bg-blue-500 rounded-2xl text-white'>Active</button>
-                                <button className='p-3 bg-red-500 rounded-2xl text-white'>Delete</button>
+                                <button className='p-3 bg-red-500 rounded-2xl text-white'
+                                
+                                onClick={()=>{
+
+                                    axios.delete(import.meta.env.VITE_BACKEND_URL + `/api/productfeedbacks/${feedback.productId}`)
+                                    .then(()=>{
+                                        toast.success("Feedback Deleted Successfully😏")
+                                        setLoaded(false)
+                                    }).catch(()=>{
+                                        toast.error("Error with Deleting Feedback🫡")
+                                    })
+                                }}
+                                
+                                >Delete</button>
                             </div>
 
                         </td>

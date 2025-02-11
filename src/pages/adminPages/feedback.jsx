@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { Result } from 'postcss';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
+
 
 export default function Feedback() {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -89,14 +92,28 @@ export default function Feedback() {
                                 <button className='bg-red-500 text-white px-4 py-2 rounded'
                                 
                                 onClick={()=>{
-                                    axios.delete(import.meta.env.VITE_BACKEND_URL + `/api/feedbacks/${feedback.feedbackId}`).then((res)=>{
-                                        console.log(res.data)
-                                        toast.success(res.data.message)
-                                        setFeedbacksLoaded(false)
-                                    }).catch((error)=>{
-                                        toast.error("error")
+                                    Swal.fire({
+                                        title: "Are you sure?",
+                                        text: "You won't be able to revert this!",
+                                        icon: "warning",
+                                        showCancelButton: true,
+                                        confirmButtonColor: "#d33",
+                                        cancelButtonColor: "#3085d6",
+                                        confirmButtonText: "Yes, delete it!",
+                                    }).then((result)=>{
+                                        if(result.isConfirmed){
+                                            axios.delete(import.meta.env.VITE_BACKEND_URL + `/api/feedbacks/${feedback.feedbackId}`).then((res)=>{
+                                                console.log(res.data)
+                                                toast.success(res.data.message)
+                                                setFeedbacksLoaded(false)
+                                            }).catch((error)=>{
+                                                toast.error("error")
+                                            })
+                                        }
                                     })
+                                    
                                 }}
+                                
                                 
                                 
                                 >Delete</button>

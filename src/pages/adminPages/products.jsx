@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { FaPlus, FaTrash } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -71,20 +72,35 @@ export default function Products() {
                 <button
                   className="p-2 bg-red-500 text-white hover:bg-red-600 focus:outline-none rounded-full"
 
-                  onClick={()=>{
-                    const token = localStorage.getItem("token");
-
-                    axios.delete( import.meta.env.VITE_BACKEND_URL + `/api/products/${product.productId}`, {
-                      headers: {
-                        Authorization: `Bearer ${token}`,
-                      },
-                    }).then((res) => {
-                      console.log(res.data);
-                      toast.success("Product deleted successfully");
-                      setProductLoaded(false);
+                  onClick={() => {
+                    Swal.fire({
+                      title: "Are you sure?",
+                      text: "You won't be able to revert this!",
+                      icon: "warning",
+                      showCancelButton: true,
+                      confirmButtonColor: "#d33",
+                      cancelButtonColor: "#3085d6",
+                      confirmButtonText: "Yes, delete it!",
+                    }).then((result) => {
+                      console.log(result)
+                      if (result.isConfirmed) {
+                        const token = localStorage.getItem("token");
+                  
+                        axios
+                          .delete(import.meta.env.VITE_BACKEND_URL + `/api/products/${product.productId}`, {
+                            headers: {
+                              Authorization: `Bearer ${token}`,
+                            },
+                          })
+                          .then((res) => {
+                            console.log(res.data);
+                            toast.success("Product deleted successfully");
+                            setProductLoaded(false);
+                          });
+                      }
                     });
-              
                   }}
+                  
 
 
                 >

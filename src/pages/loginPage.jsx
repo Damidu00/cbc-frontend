@@ -1,6 +1,8 @@
+import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
@@ -8,6 +10,29 @@ export default function LoginPage() {
   const [email,setEmail] = useState("Your Email")
   const [password,setPassword] = useState("")
   const navigate = useNavigate()
+
+  const googleLogin = useGoogleLogin({
+    onSuccess : (res)=>{
+      console.log(res)
+      axios.post(import.meta.env.VITE_BACKEND_URL + "/api/users/google",{
+        token : res.access_token
+      })
+      .then(
+        (res)=>{
+          if(res.data.message == "User created"){
+            toast.success("Your account is created..now you can login via google.")
+          }else{
+            localStorage.setItem("token",res.data.token)
+            if(res.data.user.type == "admin"){
+              navigate("/admin")
+            }else{
+              navigate("/")
+            }
+          }
+        }
+      )
+    }
+  })
 
   function login(){
     axios.post( import.meta.env.VITE_BACKEND_URL + "/api/users/login",{
@@ -76,6 +101,18 @@ export default function LoginPage() {
               Login
             </button>
           </div>
+          <div className="flex items-center justify-center -mt-3">
+
+          <button className="flex items-center gap-3 px-5 py-2 border border-gray-300 rounded-full shadow-sm text-gray-700 font-medium hover:bg-gray-100 transition-all duration-300"
+          onClick={()=>{googleLogin()}}
+          >
+            <FcGoogle className="text-xl text-red-500" />
+            <span>Continue with Google</span>
+          </button>
+          </div>
+          
+
+
           <p className="text-sm text-gray-500 text-center">
             Don’t have an account?{" "}
             <a href="/register" className="text-indigo-500 hover:underline">

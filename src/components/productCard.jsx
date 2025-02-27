@@ -27,17 +27,17 @@ export default function ProductCard({ product }) {
         
         <div className="flex justify-start ">
           {/* names section */}
-          <div className='flex justify-start items-center  '>
+          <div className='flex justify-start items-center '>
           {
-            (product.price > product.lastPrice )&&<p className=" mr-2 text-[12px] font-bold text-gray-500 line-through ">${product.price}</p>
+            (product.price > product.lastPrice )&&<p className=" mr-2 text-[10px] font-bold text-gray-500 line-through "><span className='text-[8px]'>LKR:</span>{product.price}</p>
           }
-          <p className="text-xl font-bold text-red-500 mr-5">${product.lastPrice}</p>
+          <p className="text-xl font-bold text-red-500 mr-4"><span className='text-[12px]'>LKR: </span>{product.lastPrice}</p>
           </div>
 
-          <div className='flex  ml-16 '>
+          <div className='flex absolute right-0 mr-2 '>
             {/* stock part */}
           {product.stock > 0 ? (
-            <span className="flex items-center px-2 py-1 text-[14px] text-green-500  rounded-full">
+            <span className="flex items-center px-2 py-1 text-[12px] text-green-500  rounded-full">
               In Stock
             </span>
           ) : (

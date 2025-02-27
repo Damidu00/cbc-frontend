@@ -34,7 +34,7 @@ export default function CartComponent(props) {
     )
 
   return (
-    <tr className=' items-center border-b border-gray-600 hover:bg-gray-200 p-4'>
+    <tr className=' items-center  hover:bg-gray-200 p-4'>
     <td >
         <img src={product?.images?.[0]} className='w-[100px] h-[100px] object-cover mx-auto rounded-lg' />
     </td>

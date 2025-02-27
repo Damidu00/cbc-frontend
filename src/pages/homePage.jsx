@@ -10,10 +10,10 @@ import AboutUs from './homePages/aboutUs';
 import ProductInfo from './homePages/productInfo';
 import Home from '../components/home';
 import CartPage from './homePages/cartPage';
-import FeedbackCart from '../components/feedbackCart';
 import Feedbacks from './homePages/feedbacks';
 import AddFeedback from './homePages/addFeedback';
 import AddProductFeedback from './homePages/addProductFeedback';
+import Shipping from './homePages/shipping';
 
 export default function HomePage() {
   
@@ -32,7 +32,7 @@ export default function HomePage() {
           <Route path='/feedbacks' element={<Feedbacks/>}/>
           <Route path='/addfeedback' element={<AddFeedback/>}/>
           <Route path='/addproductfeedback' element={<AddProductFeedback/>}/>
-
+          <Route path='/shipping' element={<Shipping/>}/>
         </Routes>
       </div>
       {/* <Home/> */}

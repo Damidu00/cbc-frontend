@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import NotFoundPage from '../../components/NotFoundPage';
 import ImageSlider from '../../components/imageSlider';
 import { addToCart } from '../../utils/cartFunction';
@@ -14,6 +14,8 @@ export default function ProductInfo() {
   const [status, setStatus] = useState("Loading");
   const [productFeedback, setProductFeedback] = useState([]);
   const [feedbackstatus, setfeedbackStatus] = useState("Loading");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     axios.get(import.meta.env.VITE_BACKEND_URL + "/api/products/" + productId).then((res) => {
@@ -40,6 +42,18 @@ export default function ProductInfo() {
   function clickAddToCart() {
     addToCart(product.productId, 1);
     toast.success("Product Added To Cart");
+  }
+
+  function onBuyNowClick(){
+    navigate('/shipping',{
+      state : {
+        items : [
+        {productId : product.productId,
+          qty : 1
+        }
+        ]
+      }
+    })
   }
 
   return (
@@ -81,6 +95,14 @@ export default function ProductInfo() {
               >
                 Add To Cart
               </button>
+
+              <button
+                onClick={onBuyNowClick}
+                className="  font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-blue-950 hover:text-white active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 transition-all duration-300 mt-5 w-full lg:w-auto border border-black mx-2"
+              >
+                Buy Now
+              </button>
+
             </div>
 
             {/* Feedback Slider */}

@@ -10,6 +10,7 @@ import DashboardPage from './adminPages/dashboardPage'
 import UpdateProduct from './adminPages/updateProduct'
 import Feedback from './adminPages/feedback'
 import ProductFeedbacks from './adminPages/productFeedbacks'
+import AdminOrdersPage from './adminPages/adminOrderpage'
 
 export default function AdminHomePage() {
   return (
@@ -23,7 +24,7 @@ export default function AdminHomePage() {
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/customers"><IoPeopleSharp className='mr-2' />Customers</Link>
         </div>
 
-        <div className="w-[80%] bg-blue-200 h-screen">
+        <div className="w-[80%] bg-gray-200 h-screen">
             <Routes path="/*">
                 <Route path="/dashboard" element={<DashboardPage/>}/>
                 <Route path='/products' element={<Products/>}/>
@@ -31,7 +32,7 @@ export default function AdminHomePage() {
                 <Route path='/products/updateproduct' element={<UpdateProduct/>}/>
                 <Route path='/feedbacks' element={<Feedback/>}/>
                 <Route path='/productFeedbacks' element={<ProductFeedbacks/>}/>
-
+                <Route path='/orders' element={<AdminOrdersPage/>}/>
             </Routes>
         </div>
     </div>

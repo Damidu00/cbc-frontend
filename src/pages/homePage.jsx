@@ -14,6 +14,7 @@ import Feedbacks from './homePages/feedbacks';
 import AddFeedback from './homePages/addFeedback';
 import AddProductFeedback from './homePages/addProductFeedback';
 import Shipping from './homePages/shipping';
+import Orders from './homePages/orders';
 
 export default function HomePage() {
   
@@ -33,6 +34,7 @@ export default function HomePage() {
           <Route path='/addfeedback' element={<AddFeedback/>}/>
           <Route path='/addproductfeedback' element={<AddProductFeedback/>}/>
           <Route path='/shipping' element={<Shipping/>}/>
+          <Route path='/orders' element={<Orders/>}/>
         </Routes>
       </div>
       {/* <Home/> */}

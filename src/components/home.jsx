@@ -13,7 +13,8 @@ export default function Home() {
    const images = [
       'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban1.png',
       'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban2.png',
-      'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban3.png',
+      'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//bg-3.png',
+      'https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//ban4.png'
     ]
     
   
@@ -21,7 +22,7 @@ export default function Home() {
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); 
-      }, 5000); 
+      }, 3000); 
   
       return () => clearInterval(interval); 
     }, [images.length]);

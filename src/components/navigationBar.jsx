@@ -13,7 +13,7 @@ export default function NavigationBar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 bg-white shadow-md p-4 flex items-center justify-between z-50 h-[80px]" data-aos="fade-down">
+    <nav className="sticky top-0 bg-gray-100 shadow-md p-4 flex items-center justify-between z-50 h-[80px]" data-aos="fade-down">
       {/* Logo */}
       <div className="flex items-center">
         <div className="w-18 h-18 bg-gray-50 rounded-full flex items-center justify-center">
@@ -25,7 +25,7 @@ export default function NavigationBar() {
 
       {/* Title (Hidden on Small Screens) */}
       <div className="text-center flex-grow absolute left-[120px] hidden md:block">
-        <h1 className="text-[25px] font-bold text-gray-800 font-serif">Crystal Beauty Clear</h1>
+        <h1 className="text-[25px] font-bold text-gray-800 font-serif hover:scale-x-110 cursor-pointer">Crystal Beauty Clear</h1>
       </div>
 
       {/* Mobile Menu Button */}
@@ -77,7 +77,7 @@ export default function NavigationBar() {
 // Reusable NavLink Component
 function NavLink({ to, text, onClick }) {
   return (
-    <Link to={to} onClick={onClick} className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
+    <Link to={to} onClick={onClick} className="inline-block px-4 py-2 text-gray-700 font-medium bg-gray-200 hover:bg-gray-300 rounded-md shadow-sm transition duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
       {text}
     </Link>
   );

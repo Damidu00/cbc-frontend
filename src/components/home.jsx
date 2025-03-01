@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import NewProducts from './newProducts'
 import AOS from 'aos';
 import HomepageSecondSection from './homepageSecondSection';
+import CertificateSection from './newProducts';
 
 export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
     
             <div className=' mt-8'>
-              <NewProducts/>
+              <CertificateSection/>
             </div>
     
           

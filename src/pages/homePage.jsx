@@ -37,7 +37,7 @@ export default function HomePage() {
           <Route path='/orders' element={<Orders/>}/>
         </Routes>
       </div>
-      {/* <Home/> */}
+
 
       <Footer />
     </>

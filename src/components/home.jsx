@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NewProducts from './newProducts'
 import AOS from 'aos';
+import HomepageSecondSection from './homepageSecondSection';
 
 export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,6 +30,7 @@ export default function Home() {
 
 
   return (
+    <>
           <div className="bg-gray-100 h-screen">
             <div data-aos="fade-down" className="relative h-[600px] overflow-hidden ml-5 mr-5">
               <div
@@ -51,11 +53,17 @@ export default function Home() {
                 ))}
               </div>
             </div>
-    
-                <div className=' mt-8'>
-                  <NewProducts/>
-                </div>
-    
+
           </div>
+            <div className='-mt-5'>
+              <HomepageSecondSection/>
+            </div>
+    
+            <div className=' mt-8'>
+              <NewProducts/>
+            </div>
+    
+          
+          </>
   )
 }

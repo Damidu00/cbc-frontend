@@ -45,7 +45,7 @@ export default function NavigationBar() {
         {/* Account & Cart Icons */}
         <div className="flex items-center space-x-2">
           <FaUserCircle className="w-6 h-6 text-gray-600" />
-          <Link to="/account" className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif">Account</Link>
+          <Link to="/currentuser" className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif">Account</Link>
         </div>
         <div className="flex items-center space-x-2">
           <FaShoppingBag className="w-6 h-6 text-gray-600" />
@@ -62,7 +62,7 @@ export default function NavigationBar() {
           <NavLink to="/contactus" text="Contact Us" onClick={() => setMenuOpen(false)} />
           <div className="flex items-center space-x-2">
             <FaUserCircle className="w-6 h-6 text-gray-600" />
-            <Link to="/account" className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif" onClick={() => setMenuOpen(false)}>Account</Link>
+            <Link to="/currentuser" className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-bold font-serif" onClick={() => setMenuOpen(false)}>Account</Link>
           </div>
           <div className="flex items-center space-x-2">
             <FaShoppingBag className="w-6 h-6 text-gray-600" />

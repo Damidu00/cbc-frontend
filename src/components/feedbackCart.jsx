@@ -20,7 +20,7 @@ export default function FeedbackCart({ feedback }) {
               <p key={index} className='text-gray-700 bg-gray-300 rounded p-2'>{reply.message}</p>
             ))
           ) : (
-            <p className=' text-red-500'>Admin not replied yet</p>
+            <p className=' text-red-500'>Admin Will Reply Soon!!</p>
           )}
         </div>
       </div>

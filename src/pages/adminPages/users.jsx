@@ -12,15 +12,15 @@ export default function Users() {
         console.log("Token:", token);
 
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/users/allusers`,  // ✅ Corrected API URL
+          `${import.meta.env.VITE_BACKEND_URL}/api/users/allusers`,  
           {
             headers: {
-              Authorization: `Bearer ${token}`,  // ✅ Fixed template literal
+              Authorization: `Bearer ${token}`,  
             },
           }
         );
 
-        const data = response.data;  // ✅ Axios automatically parses JSON
+        const data = response.data;  
         console.log("API Response:", data);
 
         if (data.users) {

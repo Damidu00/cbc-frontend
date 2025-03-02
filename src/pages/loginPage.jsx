@@ -110,14 +110,14 @@ export default function LoginPage() {
             <span>Continue with Google</span>
           </button>
           </div>
-          
-
-
           <p className="text-sm text-gray-500 text-center">
             Don’t have an account?{" "}
-            <a href="/register" className="text-indigo-500 hover:underline">
-              Sign up
-            </a>
+            <span 
+              className="text-blue-600 hover:underline cursor-pointer" 
+              onClick={() => navigate("/signup")}
+            >
+              {" "}Sign up
+            </span>
           </p>
         </div>
       </div>

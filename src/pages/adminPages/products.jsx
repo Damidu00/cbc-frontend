@@ -29,7 +29,7 @@ export default function Products() {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen relative" >
-      <Link to={"/admin/products/addProduct"} className='absolute right-[25px] bottom-[25px] text-[30px] bg-[#245af7] p-4 text-white rounded-xl hover:bg-[#2eb2dd] hover:text-black'><FaPlus/></Link>
+      <Link to={"/admin/products/addProduct"} className='absolute right-[25px] top-[10px] text-[30px] bg-[#245af7] p-4 text-white rounded-xl hover:bg-[#2eb2dd] hover:text-black'><FaPlus/></Link>
       <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
 
       {

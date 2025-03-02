@@ -58,9 +58,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center font-poppins">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center font-poppins -mt-10">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
+        <h2 className="text-2xl font-semibold text-center text-blue-700 mb-6">
           Login Here
         </h2>
         <div>

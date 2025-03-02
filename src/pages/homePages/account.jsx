@@ -65,13 +65,12 @@ export default function Account() {
     <div className="flex justify-center items-center min-h-screen bg-red-800 dark:bg-gray-200 p-4 ">
       {user ? (
         <>
-          {/* Dark Background Overlay */}
+
           {showPopup && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-              {/* Popup Modal */}
+
               <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-md text-center relative">
         
-                {/* Profile Image */}
                 <div className="w-24 h-24 mx-auto mb-4">
                   <img
                     src="https://lyycwptpupzvjwofdegk.supabase.co/storage/v1/object/public/images//Profile-PNG-File.png"
@@ -80,7 +79,6 @@ export default function Account() {
                   />
                 </div>
 
-                {/* User Details */}
                 <h2 className="text-xl font-semibold text-gray-300 dark:text-white">{user.firstName} {user.lastName}</h2>
                 <p className="text-gray-500 dark:text-gray-400 text-sm">{user.type}</p>
 
@@ -89,7 +87,6 @@ export default function Account() {
                   <p className="text-gray-700 dark:text-gray-300"><strong>Blocked:</strong> {user.isBlocked ? "Yes" : "No"}</p>
                 </div>
 
-                {/* Buttons */}
                 <div className="mt-5 flex justify-center gap-4">
                   <button 
                     className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"

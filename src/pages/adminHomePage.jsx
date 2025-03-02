@@ -48,7 +48,7 @@ export default function AdminHomePage() {
 
   return (
     <div className='bg-blue-300 w-full h-screen flex'>
-        <div className='w-[20%] h-screen bg-gray-900 flex flex-col items-center ' >
+        <div className='w-[20%] h-screen bg-gray-800 flex flex-col items-center ' >
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/dashboard"><BsGraphDown className='mr-2' />Dashboard</Link>
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/products"><AiOutlineProduct className='mr-2' />Products</Link>
             <Link className='m-2 flex flex-row items-center text-white text-lg hover:text-amber-600 hover:-translate-y-1 transition-transform duration-300 hover:scale-110' to="/admin/productFeedbacks"><AiOutlineProduct className='mr-2' />Product Fedbacks</Link>

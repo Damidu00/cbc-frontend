@@ -50,8 +50,8 @@ export default function Products() {
             <tr key={index} className="odd:bg-gray-50 even:bg-gray-100">
               <td className="p-4 border border-gray-300">{product.productId}</td>
               <td className="p-4 border border-gray-300">{product.productName}</td>
-              <td className="p-4 border border-gray-300">${product.price.toFixed(2)}</td>
-              <td className="p-4 border border-gray-300">${product.lastPrice.toFixed(2)}</td>
+              <td className="p-4 border border-gray-300">LKR{product.price.toFixed(2)}</td>
+              <td className="p-4 border border-gray-300">LKR{product.lastPrice.toFixed(2)}</td>
               <td className="p-4 border border-gray-300">{product.stock}</td>
               <td className="p-4 border border-gray-300">
                 {truncateDescription(product.description, 50)}

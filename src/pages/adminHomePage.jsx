@@ -13,6 +13,7 @@ import ProductFeedbacks from './adminPages/productFeedbacks'
 import AdminOrdersPage from './adminPages/adminOrderpage'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import Users from './adminPages/users'
 
 export default function AdminHomePage() {
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ export default function AdminHomePage() {
                 <Route path='/feedbacks' element={<Feedback/>}/>
                 <Route path='/productFeedbacks' element={<ProductFeedbacks/>}/>
                 <Route path='/orders' element={<AdminOrdersPage/>}/>
+                <Route path='/customers' element={<Users/>}/>
             </Routes>}
             
             {

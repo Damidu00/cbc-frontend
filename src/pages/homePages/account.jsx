@@ -40,7 +40,7 @@ export default function Account() {
     window.location.reload();
   };
 
-  // DELETE USER FUNCTION
+
   const handleDeleteUser = async () => {
     if (!user || !user._id) return;
 
@@ -53,7 +53,7 @@ export default function Account() {
       });
 
       alert("User deleted successfully!");
-      localStorage.removeItem("token"); // Remove token since user is deleted
+      localStorage.removeItem("token"); 
       navigate('/');
       window.location.reload();
     } catch (error) {
